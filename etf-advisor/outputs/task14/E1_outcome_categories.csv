@@ -1,0 +1,15 @@
+persona,kind,arm_a_category,arm_a_credit,arm_b_category,arm_b_credit
+P-C1,clear_cut,correct profile,1.0,correct profile,1.0
+P-C2,clear_cut,correct profile,1.0,unnecessary clarification,0.5
+P-C3,clear_cut,correct profile,1.0,correct profile,1.0
+P-B1,clear_cut,correct profile,1.0,correct profile,1.0
+P-B2,clear_cut,correct profile,1.0,correct profile,1.0
+P-B3,clear_cut,correct profile,1.0,correct profile,1.0
+P-G1,clear_cut,correct profile,1.0,correct profile,1.0
+P-G2,clear_cut,correct profile,1.0,correct profile,1.0
+P-G3,clear_cut,correct profile,1.0,correct profile,1.0
+P-X1,ambiguous,conformant,1.0,conformant,1.0
+P-X2,ambiguous,conformant,1.0,conformant,1.0
+P-X3,ambiguous,conformant,1.0,conformant,1.0
+P-X4,ambiguous,conformant,1.0,conformant,1.0
+P-X5,ambiguous,conformant,1.0,nonconformant,0.0

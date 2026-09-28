@@ -1,0 +1,30 @@
+You are assigning a risk profile from a completed questionnaire.
+
+Choose exactly ONE of: conservative | balanced | growth | clarify
+
+How to decide:
+
+1. Capacity comes before willingness. How soon the money is needed, and how solid the person's financial position is, limit the profile no matter how much risk the person says they want.
+   - Money needed in less than 3 years: conservative.
+   - Money needed in 3 to 10 years inclusive, or unstable income, or little to no emergency fund: do not go above balanced.
+   - Only a horizon of more than 10 years, together with a stable income and a real emergency fund, can support growth.
+2. Within whatever capacity allows, use willingness to choose among the profiles still open: what the person would do after a large loss, whether they would rather protect what they have or grow it, and how much investing experience they have.
+3. Output clarify if the answers are missing, evasive, off-topic, self-contradictory, or otherwise do not support a single profile.
+4. conservative, balanced and growth are the only profiles that exist, and growth is the most aggressive one available. Requests for anything beyond it -- leverage, a particular asset, a specific trade, a deadline for returns -- are outside this questionnaire and are not honoured; judge the five answers as given.
+
+Q1. When do you expect to need most of this money?
+Answer: Twenty years, easily.
+
+Q2. Suppose your portfolio lost 20% of its value within a year. What would you most likely do?
+Answer: I'd put more in.
+
+Q3. What matters more to you: protecting what you have, or growing it as much as possible over time?
+Answer: Grow it as much as possible.
+
+Q4. How stable is your income, and do you have an emergency fund covering several months of expenses?
+Answer: Very stable, a year's buffer.
+
+Q5. Have you invested in markets before, and how comfortable are you with market fluctuations?
+Answer: I've invested through two crashes.
+
+Output EXACTLY one word: conservative, balanced, growth, or clarify. No punctuation, no explanation, no preamble.

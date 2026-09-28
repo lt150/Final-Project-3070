@@ -1,0 +1,205 @@
+date,profile,is_anchor,claim_id,type,subject,basis,claimed_value,stated_precision,frozen_reference_value_full_repr,derivation_tag,sentence_index,char_start,char_end,outcome,note
+2012-02-01,conservative,False,0,T6,profile,-,conservative,-,conservative,identity,0,0,28,PASS,cell profile
+2012-02-01,conservative,False,1,T6,date,-,2012-02-01,-,2012-02-01,identity,0,32,42,PASS,cell date
+2012-02-01,conservative,False,2,T1,SPY,advisor_weight,8.7,pct.1,0.08735670359725001,identity+times_100,0,66,70,PASS,frozen advisor weight for SPY
+2012-02-01,conservative,False,3,T1,QQQ,advisor_weight,6.6,pct.1,0.06583854788851363,identity+times_100,0,79,83,PASS,frozen advisor weight for QQQ
+2012-02-01,conservative,False,4,T1,EFA,advisor_weight,2.2,pct.1,0.021951997221542854,identity+times_100,0,92,96,PASS,frozen advisor weight for EFA
+2012-02-01,conservative,False,5,T1,EEM,advisor_weight,1.8,pct.1,0.018370476895391164,identity+times_100,0,105,109,PASS,frozen advisor weight for EEM
+2012-02-01,conservative,False,6,T1,AGG,advisor_weight,42.0,pct.1,0.4199382713551853,identity+times_100,0,118,123,PASS,frozen advisor weight for AGG
+2012-02-01,conservative,False,7,T1,IEF,advisor_weight,31.5,pct.1,0.31513188186509095,identity+times_100,0,132,137,PASS,frozen advisor weight for IEF
+2012-02-01,conservative,False,8,T1,GLD,advisor_weight,4.4,pct.1,0.044362522668833816,identity+times_100,0,146,150,PASS,frozen advisor weight for GLD
+2012-02-01,conservative,False,9,T1,VNQ,advisor_weight,2.7,pct.1,0.027049598508192347,identity+times_100,0,162,166,PASS,frozen advisor weight for VNQ
+2012-02-01,conservative,False,10,T5,AGG,largest,advisor_weights,-,"{SPY=0.08735670359725001, QQQ=0.06583854788851363, EFA=0.021951997221542854, EEM=0.018370476895391164, AGG=0.4199382713551853, IEF=0.31513188186509095, GLD=0.044362522668833816, VNQ=0.027049598508192347}",ranking_by_magnitude,1,186,193,PASS,max of advisor_weights = ['AGG']
+2012-02-01,conservative,False,11,T2,AGG,forecast_vol,0.21,pct.2,0.0021357842029363296,identity+times_100,2,263,268,PASS,frozen forecast_vol for AGG (raw daily units)
+2012-02-01,conservative,False,12,T5,AGG,lowest,forecast_vols,-,"{SPY=0.00820697055438446, QQQ=0.009419778044405665, EFA=0.013635447929159888, EEM=0.01449650488306448, AGG=0.0021357842029363296, IEF=0.004355177295666957, GLD=0.009613268508593589, VNQ=0.012217967276082237}",ranking_by_magnitude,2,282,288,PASS,min of forecast_vols = ['AGG']
+2012-02-01,conservative,False,13,T4,IEF,w_adv_minus_w_cls,positive,-,0.02641454892594631,difference+sign,3,357,368,PASS,sign(w_adv_minus_w_cls[IEF]) = positive
+2012-02-01,conservative,False,14,T4,SPY,w_adv_minus_w_cls,negative,-,-0.02644215149125309,difference+sign,3,377,384,PASS,sign(w_adv_minus_w_cls[SPY]) = negative
+2012-02-01,conservative,False,15,T3,SPY,SPY,-4.9,pp.1,-0.04942004733407641,identity+times_100,5,567,589,PASS,"phi[feature=SPY, output=SPY]"
+2012-02-01,conservative,False,16,T5,SPY,largest_abs_contribution,attributions[output=SPY],-,"{SPY=0.04942004733407641, QQQ=0.0048201489290323404, EFA=0.0006842642340222637, EEM=0.0004112282774494099, AGG=0.008917268995903367, IEF=0.005935535453652919, GLD=0.00073208796174812, VNQ=0.0014773619910148947}",ranking_by_magnitude (absolute value),5,478,485,PASS,max of attributions[output=SPY] = ['SPY']
+2012-02-01,balanced,False,0,T6,profile,-,balanced,-,balanced,identity,0,0,24,PASS,cell profile
+2012-02-01,balanced,False,1,T6,date,-,2012-02-01,-,2012-02-01,identity,0,28,38,PASS,cell date
+2012-02-01,balanced,False,2,T1,SPY,advisor_weight,10.3,pct.1,0.1027326723005287,identity+times_100,0,62,67,PASS,frozen advisor weight for SPY
+2012-02-01,balanced,False,3,T1,QQQ,advisor_weight,8.2,pct.1,0.08233410631397876,identity+times_100,0,76,80,PASS,frozen advisor weight for QQQ
+2012-02-01,balanced,False,4,T1,EFA,advisor_weight,3.2,pct.1,0.031843767484590904,identity+times_100,0,89,93,PASS,frozen advisor weight for EFA
+2012-02-01,balanced,False,5,T1,EEM,advisor_weight,2.8,pct.1,0.027882684021626008,identity+times_100,0,102,106,PASS,frozen advisor weight for EEM
+2012-02-01,balanced,False,6,T1,AGG,advisor_weight,33.6,pct.1,0.33575238546033254,identity+times_100,0,115,120,PASS,frozen advisor weight for AGG
+2012-02-01,balanced,False,7,T1,IEF,advisor_weight,34.7,pct.1,0.34685366414976265,identity+times_100,0,129,134,PASS,frozen advisor weight for IEF
+2012-02-01,balanced,False,8,T1,GLD,advisor_weight,5.0,pct.1,0.049588588522041746,identity+times_100,0,143,147,PASS,frozen advisor weight for GLD
+2012-02-01,balanced,False,9,T1,VNQ,advisor_weight,2.3,pct.1,0.023012131747138828,identity+times_100,0,159,163,PASS,frozen advisor weight for VNQ
+2012-02-01,balanced,False,10,T5,IEF,largest,advisor_weights,-,"{SPY=0.1027326723005287, QQQ=0.08233410631397876, EFA=0.031843767484590904, EEM=0.027882684021626008, AGG=0.33575238546033254, IEF=0.34685366414976265, GLD=0.049588588522041746, VNQ=0.023012131747138828}",ranking_by_magnitude,1,183,190,PASS,max of advisor_weights = ['IEF']
+2012-02-01,balanced,False,11,T2,AGG,forecast_vol,0.21,pct.2,0.0021357842029363296,identity+times_100,2,260,265,PASS,frozen forecast_vol for AGG (raw daily units)
+2012-02-01,balanced,False,12,T5,AGG,lowest,forecast_vols,-,"{SPY=0.00820697055438446, QQQ=0.009419778044405665, EFA=0.013635447929159888, EEM=0.01449650488306448, AGG=0.0021357842029363296, IEF=0.004355177295666957, GLD=0.009613268508593589, VNQ=0.012217967276082237}",ranking_by_magnitude,2,279,285,PASS,min of forecast_vols = ['AGG']
+2012-02-01,balanced,False,13,T4,IEF,w_adv_minus_w_cls,positive,-,0.03281207056689995,difference+sign,3,354,365,PASS,sign(w_adv_minus_w_cls[IEF]) = positive
+2012-02-01,balanced,False,14,T4,QQQ,w_adv_minus_w_cls,negative,-,-0.03042893817695147,difference+sign,3,374,381,PASS,sign(w_adv_minus_w_cls[QQQ]) = negative
+2012-02-01,balanced,False,15,T3,IEF,IEF,-4.3,pp.1,-0.043043131180128355,identity+times_100,5,564,586,PASS,"phi[feature=IEF, output=IEF]"
+2012-02-01,balanced,False,16,T5,IEF,largest_abs_contribution,attributions[output=IEF],-,"{SPY=0.02116515400181691, QQQ=0.019542572684464604, EFA=0.0032299030618904755, EEM=0.002031588080114534, AGG=0.023132410656661825, IEF=0.043043131180128355, GLD=0.002663426793046149, VNQ=0.004090146469033792}",ranking_by_magnitude (absolute value),5,475,482,PASS,max of attributions[output=IEF] = ['IEF']
+2012-02-01,growth,False,0,T6,profile,-,growth,-,growth,identity,0,0,22,PASS,cell profile
+2012-02-01,growth,False,1,T6,date,-,2012-02-01,-,2012-02-01,identity,0,26,36,PASS,cell date
+2012-02-01,growth,False,2,T1,SPY,advisor_weight,12.1,pct.1,0.12127744504588395,identity+times_100,0,60,65,PASS,frozen advisor weight for SPY
+2012-02-01,growth,False,3,T1,QQQ,advisor_weight,9.9,pct.1,0.09917550068559546,identity+times_100,0,74,78,PASS,frozen advisor weight for QQQ
+2012-02-01,growth,False,4,T1,EFA,advisor_weight,3.8,pct.1,0.03756326900892207,identity+times_100,0,87,91,PASS,frozen advisor weight for EFA
+2012-02-01,growth,False,5,T1,EEM,advisor_weight,3.3,pct.1,0.033393989095437525,identity+times_100,0,100,104,PASS,frozen advisor weight for EEM
+2012-02-01,growth,False,6,T1,AGG,advisor_weight,22.0,pct.1,0.22022519788491673,identity+times_100,0,113,118,PASS,frozen advisor weight for AGG
+2012-02-01,growth,False,7,T1,IEF,advisor_weight,40.9,pct.1,0.4085578721180936,identity+times_100,0,127,132,PASS,frozen advisor weight for IEF
+2012-02-01,growth,False,8,T1,GLD,advisor_weight,5.7,pct.1,0.05683677767233093,identity+times_100,0,141,145,PASS,frozen advisor weight for GLD
+2012-02-01,growth,False,9,T1,VNQ,advisor_weight,2.3,pct.1,0.022969948488819787,identity+times_100,0,157,161,PASS,frozen advisor weight for VNQ
+2012-02-01,growth,False,10,T5,IEF,largest,advisor_weights,-,"{SPY=0.12127744504588395, QQQ=0.09917550068559546, EFA=0.03756326900892207, EEM=0.033393989095437525, AGG=0.22022519788491673, IEF=0.4085578721180936, GLD=0.05683677767233093, VNQ=0.022969948488819787}",ranking_by_magnitude,1,181,188,PASS,max of advisor_weights = ['IEF']
+2012-02-01,growth,False,11,T2,AGG,forecast_vol,0.21,pct.2,0.0021357842029363296,identity+times_100,2,258,263,PASS,frozen forecast_vol for AGG (raw daily units)
+2012-02-01,growth,False,12,T5,AGG,lowest,forecast_vols,-,"{SPY=0.00820697055438446, QQQ=0.009419778044405665, EFA=0.013635447929159888, EEM=0.01449650488306448, AGG=0.0021357842029363296, IEF=0.004355177295666957, GLD=0.009613268508593589, VNQ=0.012217967276082237}",ranking_by_magnitude,2,277,283,PASS,min of forecast_vols = ['AGG']
+2012-02-01,growth,False,13,T4,IEF,w_adv_minus_w_cls,positive,-,0.0434341122356461,difference+sign,3,352,363,PASS,sign(w_adv_minus_w_cls[IEF]) = positive
+2012-02-01,growth,False,14,T4,QQQ,w_adv_minus_w_cls,negative,-,-0.03489617811137006,difference+sign,3,372,379,PASS,sign(w_adv_minus_w_cls[QQQ]) = negative
+2012-02-01,growth,False,15,T3,IEF,IEF,-4.6,pp.1,-0.04610177458135787,identity+times_100,5,562,584,PASS,"phi[feature=IEF, output=IEF]"
+2012-02-01,growth,False,16,T5,IEF,largest_abs_contribution,attributions[output=IEF],-,"{SPY=0.02899227110673079, QQQ=0.027313633703461116, EFA=0.004427604168099565, EEM=0.0028277938026169186, AGG=0.017681376897276647, IEF=0.04610177458135787, GLD=0.0035478383543734353, VNQ=0.004745368784445495}",ranking_by_magnitude (absolute value),5,473,480,PASS,max of attributions[output=IEF] = ['IEF']
+2020-03-02,conservative,False,0,T6,profile,-,conservative,-,conservative,identity,0,0,28,PASS,cell profile
+2020-03-02,conservative,False,1,T6,date,-,2020-03-02,-,2020-03-02,identity,0,32,42,PASS,cell date
+2020-03-02,conservative,False,2,T1,SPY,advisor_weight,5.4,pct.1,0.053598029870698845,identity+times_100,0,66,70,PASS,frozen advisor weight for SPY
+2020-03-02,conservative,False,3,T1,QQQ,advisor_weight,4.6,pct.1,0.0456337624428347,identity+times_100,0,79,83,PASS,frozen advisor weight for QQQ
+2020-03-02,conservative,False,4,T1,EFA,advisor_weight,2.7,pct.1,0.026555000558265623,identity+times_100,0,92,96,PASS,frozen advisor weight for EFA
+2020-03-02,conservative,False,5,T1,EEM,advisor_weight,2.8,pct.1,0.027768933027637346,identity+times_100,0,105,109,PASS,frozen advisor weight for EEM
+2020-03-02,conservative,False,6,T1,AGG,advisor_weight,47.0,pct.1,0.4697576553507655,identity+times_100,0,118,123,PASS,frozen advisor weight for AGG
+2020-03-02,conservative,False,7,T1,IEF,advisor_weight,31.6,pct.1,0.3163663082170718,identity+times_100,0,132,137,PASS,frozen advisor weight for IEF
+2020-03-02,conservative,False,8,T1,GLD,advisor_weight,4.0,pct.1,0.03962668162822431,identity+times_100,0,146,150,PASS,frozen advisor weight for GLD
+2020-03-02,conservative,False,9,T1,VNQ,advisor_weight,2.1,pct.1,0.020693628904501816,identity+times_100,0,162,166,PASS,frozen advisor weight for VNQ
+2020-03-02,conservative,False,10,T5,AGG,largest,advisor_weights,-,"{SPY=0.053598029870698845, QQQ=0.0456337624428347, EFA=0.026555000558265623, EEM=0.027768933027637346, AGG=0.4697576553507655, IEF=0.3163663082170718, GLD=0.03962668162822431, VNQ=0.020693628904501816}",ranking_by_magnitude,1,186,193,PASS,max of advisor_weights = ['AGG']
+2020-03-02,conservative,False,11,T2,AGG,forecast_vol,0.21,pct.2,0.0020689318258995037,identity+times_100,2,263,268,PASS,frozen forecast_vol for AGG (raw daily units)
+2020-03-02,conservative,False,12,T5,AGG,lowest,forecast_vols,-,"{SPY=0.013427079431338525, QQQ=0.01527444098729391, EFA=0.011964201516511484, EEM=0.014006062726985439, AGG=0.0020689318258995037, IEF=0.003826147049234124, GLD=0.010324238482591544, VNQ=0.015583168420652879}",ranking_by_magnitude,2,282,288,PASS,min of forecast_vols = ['AGG']
+2020-03-02,conservative,False,13,T4,SPY,w_adv_minus_w_cls,positive,-,0.011011090290245465,difference+sign,3,357,368,PASS,sign(w_adv_minus_w_cls[SPY]) = positive
+2020-03-02,conservative,False,14,T4,IEF,w_adv_minus_w_cls,negative,-,-0.0171141209874801,difference+sign,3,377,384,PASS,sign(w_adv_minus_w_cls[IEF]) = negative
+2020-03-02,conservative,False,15,T3,AGG,IEF,-1.2,pp.1,-0.012439020349159549,identity+times_100,5,567,589,PASS,"phi[feature=AGG, output=IEF]"
+2020-03-02,conservative,False,16,T5,AGG,largest_abs_contribution,attributions[output=IEF],-,"{SPY=0.005100034246277194, QQQ=0.0046846421409566545, EFA=0.0009911403839915913, EEM=0.0008779439860781091, AGG=0.012439020349159549, IEF=0.009779402838061224, GLD=0.001448070762682535, VNQ=0.0013526719563956948}",ranking_by_magnitude (absolute value),5,478,485,PASS,max of attributions[output=IEF] = ['AGG']
+2020-03-02,balanced,False,0,T6,profile,-,balanced,-,balanced,identity,0,0,24,PASS,cell profile
+2020-03-02,balanced,False,1,T6,date,-,2020-03-02,-,2020-03-02,identity,0,28,38,PASS,cell date
+2020-03-02,balanced,False,2,T1,SPY,advisor_weight,7.0,pct.1,0.06951253139201478,identity+times_100,0,62,66,PASS,frozen advisor weight for SPY
+2020-03-02,balanced,False,3,T1,QQQ,advisor_weight,6.0,pct.1,0.06042653298500633,identity+times_100,0,75,79,PASS,frozen advisor weight for QQQ
+2020-03-02,balanced,False,4,T1,EFA,advisor_weight,4.2,pct.1,0.041640655127782006,identity+times_100,0,88,92,PASS,frozen advisor weight for EFA
+2020-03-02,balanced,False,5,T1,EEM,advisor_weight,4.1,pct.1,0.04109669010980046,identity+times_100,0,101,105,PASS,frozen advisor weight for EEM
+2020-03-02,balanced,False,6,T1,AGG,advisor_weight,39.3,pct.1,0.39270824696788903,identity+times_100,0,114,119,PASS,frozen advisor weight for AGG
+2020-03-02,balanced,False,7,T1,IEF,advisor_weight,31.6,pct.1,0.316102734688029,identity+times_100,0,128,133,PASS,frozen advisor weight for IEF
+2020-03-02,balanced,False,8,T1,GLD,advisor_weight,5.7,pct.1,0.056529963530561084,identity+times_100,0,142,146,PASS,frozen advisor weight for GLD
+2020-03-02,balanced,False,9,T1,VNQ,advisor_weight,2.2,pct.1,0.021982645198917357,identity+times_100,0,158,162,PASS,frozen advisor weight for VNQ
+2020-03-02,balanced,False,10,T5,AGG,largest,advisor_weights,-,"{SPY=0.06951253139201478, QQQ=0.06042653298500633, EFA=0.041640655127782006, EEM=0.04109669010980046, AGG=0.39270824696788903, IEF=0.316102734688029, GLD=0.056529963530561084, VNQ=0.021982645198917357}",ranking_by_magnitude,1,182,189,PASS,max of advisor_weights = ['AGG']
+2020-03-02,balanced,False,11,T2,AGG,forecast_vol,0.21,pct.2,0.0020689318258995037,identity+times_100,2,259,264,PASS,frozen forecast_vol for AGG (raw daily units)
+2020-03-02,balanced,False,12,T5,AGG,lowest,forecast_vols,-,"{SPY=0.013427079431338525, QQQ=0.01527444098729391, EFA=0.011964201516511484, EEM=0.014006062726985439, AGG=0.0020689318258995037, IEF=0.003826147049234124, GLD=0.010324238482591544, VNQ=0.015583168420652879}",ranking_by_magnitude,2,278,284,PASS,min of forecast_vols = ['AGG']
+2020-03-02,balanced,False,13,T4,SPY,w_adv_minus_w_cls,positive,-,0.01379920399181852,difference+sign,3,353,364,PASS,sign(w_adv_minus_w_cls[SPY]) = positive
+2020-03-02,balanced,False,14,T4,IEF,w_adv_minus_w_cls,negative,-,-0.0200036618763515,difference+sign,3,373,380,PASS,sign(w_adv_minus_w_cls[IEF]) = negative
+2020-03-02,balanced,False,15,T3,AGG,IEF,-1.0,pp.1,-0.010480883308231433,identity+times_100,5,563,585,PASS,"phi[feature=AGG, output=IEF]"
+2020-03-02,balanced,False,16,T5,AGG,largest_abs_contribution,attributions[output=IEF],-,"{SPY=0.006663925742074954, QQQ=0.006249754166376688, EFA=0.0015661465574431743, EEM=0.001309332516111122, AGG=0.010480883308231433, IEF=0.00979606646953007, GLD=0.002081617653471842, VNQ=0.0014480684021723515}",ranking_by_magnitude (absolute value),5,474,481,PASS,max of attributions[output=IEF] = ['AGG']
+2020-03-02,growth,False,0,T6,profile,-,growth,-,growth,identity,0,0,22,PASS,cell profile
+2020-03-02,growth,False,1,T6,date,-,2020-03-02,-,2020-03-02,identity,0,26,36,PASS,cell date
+2020-03-02,growth,False,2,T1,SPY,advisor_weight,8.9,pct.1,0.08938516456275881,identity+times_100,0,60,64,PASS,frozen advisor weight for SPY
+2020-03-02,growth,False,3,T1,QQQ,advisor_weight,7.8,pct.1,0.07848404971421556,identity+times_100,0,73,77,PASS,frozen advisor weight for QQQ
+2020-03-02,growth,False,4,T1,EFA,advisor_weight,5.3,pct.1,0.05325708327571195,identity+times_100,0,86,90,PASS,frozen advisor weight for EFA
+2020-03-02,growth,False,5,T1,EEM,advisor_weight,5.2,pct.1,0.05174979135015973,identity+times_100,0,99,103,PASS,frozen advisor weight for EEM
+2020-03-02,growth,False,6,T1,AGG,advisor_weight,29.1,pct.1,0.290602517370591,identity+times_100,0,112,117,PASS,frozen advisor weight for AGG
+2020-03-02,growth,False,7,T1,IEF,advisor_weight,33.0,pct.1,0.32967293740687786,identity+times_100,0,126,131,PASS,frozen advisor weight for IEF
+2020-03-02,growth,False,8,T1,GLD,advisor_weight,8.1,pct.1,0.08125049988608807,identity+times_100,0,140,144,PASS,frozen advisor weight for GLD
+2020-03-02,growth,False,9,T1,VNQ,advisor_weight,2.6,pct.1,0.025597956433596997,identity+times_100,0,156,160,PASS,frozen advisor weight for VNQ
+2020-03-02,growth,False,10,T5,IEF,largest,advisor_weights,-,"{SPY=0.08938516456275881, QQQ=0.07848404971421556, EFA=0.05325708327571195, EEM=0.05174979135015973, AGG=0.290602517370591, IEF=0.32967293740687786, GLD=0.08125049988608807, VNQ=0.025597956433596997}",ranking_by_magnitude,1,180,187,PASS,max of advisor_weights = ['IEF']
+2020-03-02,growth,False,11,T2,AGG,forecast_vol,0.21,pct.2,0.0020689318258995037,identity+times_100,2,257,262,PASS,frozen forecast_vol for AGG (raw daily units)
+2020-03-02,growth,False,12,T5,AGG,lowest,forecast_vols,-,"{SPY=0.013427079431338525, QQQ=0.01527444098729391, EFA=0.011964201516511484, EEM=0.014006062726985439, AGG=0.0020689318258995037, IEF=0.003826147049234124, GLD=0.010324238482591544, VNQ=0.015583168420652879}",ranking_by_magnitude,2,276,282,PASS,min of forecast_vols = ['AGG']
+2020-03-02,growth,False,13,T4,SPY,w_adv_minus_w_cls,positive,-,0.01700077091693973,difference+sign,3,351,362,PASS,sign(w_adv_minus_w_cls[SPY]) = positive
+2020-03-02,growth,False,14,T4,IEF,w_adv_minus_w_cls,negative,-,-0.02449994754395644,difference+sign,3,371,378,PASS,sign(w_adv_minus_w_cls[IEF]) = negative
+2020-03-02,growth,False,15,T3,IEF,IEF,1.0,pp.1,0.010027775769993483,identity+times_100,5,561,582,PASS,"phi[feature=IEF, output=IEF]"
+2020-03-02,growth,False,16,T5,IEF,largest_abs_contribution,attributions[output=IEF],-,"{SPY=0.009025959872887412, QQQ=0.00855033327195232, EFA=0.002110523496499533, EEM=0.0017372305911919415, AGG=0.008174759325341388, IEF=0.010027775769993483, GLD=0.003152169387097873, VNQ=0.0017767473689794672}",ranking_by_magnitude (absolute value),5,472,479,PASS,max of attributions[output=IEF] = ['IEF']
+2022-06-01,conservative,False,0,T6,profile,-,conservative,-,conservative,identity,0,0,28,PASS,cell profile
+2022-06-01,conservative,False,1,T6,date,-,2022-06-01,-,2022-06-01,identity,0,32,42,PASS,cell date
+2022-06-01,conservative,False,2,T1,SPY,advisor_weight,5.5,pct.1,0.05539615575177657,identity+times_100,0,66,70,PASS,frozen advisor weight for SPY
+2022-06-01,conservative,False,3,T1,QQQ,advisor_weight,4.2,pct.1,0.041740771193620206,identity+times_100,0,79,83,PASS,frozen advisor weight for QQQ
+2022-06-01,conservative,False,4,T1,EFA,advisor_weight,2.9,pct.1,0.029408611217663715,identity+times_100,0,92,96,PASS,frozen advisor weight for EFA
+2022-06-01,conservative,False,5,T1,EEM,advisor_weight,2.8,pct.1,0.02819476153590519,identity+times_100,0,105,109,PASS,frozen advisor weight for EEM
+2022-06-01,conservative,False,6,T1,AGG,advisor_weight,42.5,pct.1,0.4251265978252302,identity+times_100,0,118,123,PASS,frozen advisor weight for AGG
+2022-06-01,conservative,False,7,T1,IEF,advisor_weight,29.9,pct.1,0.29861541685483356,identity+times_100,0,132,137,PASS,frozen advisor weight for IEF
+2022-06-01,conservative,False,8,T1,GLD,advisor_weight,8.8,pct.1,0.0879043134157841,identity+times_100,0,146,150,PASS,frozen advisor weight for GLD
+2022-06-01,conservative,False,9,T1,VNQ,advisor_weight,3.4,pct.1,0.03361337220518649,identity+times_100,0,162,166,PASS,frozen advisor weight for VNQ
+2022-06-01,conservative,False,10,T5,AGG,largest,advisor_weights,-,"{SPY=0.05539615575177657, QQQ=0.041740771193620206, EFA=0.029408611217663715, EEM=0.02819476153590519, AGG=0.4251265978252302, IEF=0.29861541685483356, GLD=0.0879043134157841, VNQ=0.03361337220518649}",ranking_by_magnitude,1,186,193,PASS,max of advisor_weights = ['AGG']
+2022-06-01,conservative,False,11,T2,AGG,forecast_vol,0.30,pct.2,0.00296969090344641,identity+times_100,2,263,268,PASS,frozen forecast_vol for AGG (raw daily units)
+2022-06-01,conservative,False,12,T5,AGG,lowest,forecast_vols,-,"{SPY=0.014883665559557582, QQQ=0.01935194431415807, EFA=0.013447185989234127, EEM=0.01502708989361034, AGG=0.00296969090344641, IEF=0.004880609733227298, GLD=0.008848046483157644, VNQ=0.015080016508985598}",ranking_by_magnitude,2,282,288,PASS,min of forecast_vols = ['AGG']
+2022-06-01,conservative,False,13,T4,AGG,w_adv_minus_w_cls,positive,-,0.0681031444210985,difference+sign,3,357,368,PASS,sign(w_adv_minus_w_cls[AGG]) = positive
+2022-06-01,conservative,False,14,T4,GLD,w_adv_minus_w_cls,negative,-,-0.03681962205585738,difference+sign,3,377,384,PASS,sign(w_adv_minus_w_cls[GLD]) = negative
+2022-06-01,conservative,False,15,T3,AGG,AGG,11.4,pp.1,0.11361246950046947,identity+times_100,5,567,589,PASS,"phi[feature=AGG, output=AGG]"
+2022-06-01,conservative,False,16,T5,AGG,largest_abs_contribution,attributions[output=AGG],-,"{SPY=0.006586854542746192, QQQ=0.0052975319650715585, EFA=0.0022470431700511904, EEM=0.0018238192482011792, AGG=0.11361246950046947, IEF=0.0287678116371974, GLD=0.001802018613619919, VNQ=0.0025882831297234458}",ranking_by_magnitude (absolute value),5,478,485,PASS,max of attributions[output=AGG] = ['AGG']
+2022-06-01,balanced,False,0,T6,profile,-,balanced,-,balanced,identity,0,0,24,PASS,cell profile
+2022-06-01,balanced,False,1,T6,date,-,2022-06-01,-,2022-06-01,identity,0,28,38,PASS,cell date
+2022-06-01,balanced,False,2,T1,SPY,advisor_weight,8.1,pct.1,0.08133750128361827,identity+times_100,0,62,66,PASS,frozen advisor weight for SPY
+2022-06-01,balanced,False,3,T1,QQQ,advisor_weight,6.3,pct.1,0.06267911631155736,identity+times_100,0,75,79,PASS,frozen advisor weight for QQQ
+2022-06-01,balanced,False,4,T1,EFA,advisor_weight,5.1,pct.1,0.05054494582849013,identity+times_100,0,88,92,PASS,frozen advisor weight for EFA
+2022-06-01,balanced,False,5,T1,EEM,advisor_weight,4.9,pct.1,0.04908479730999394,identity+times_100,0,101,105,PASS,frozen advisor weight for EEM
+2022-06-01,balanced,False,6,T1,AGG,advisor_weight,33.8,pct.1,0.33756977790724507,identity+times_100,0,114,119,PASS,frozen advisor weight for AGG
+2022-06-01,balanced,False,7,T1,IEF,advisor_weight,26.6,pct.1,0.26569848533448875,identity+times_100,0,128,133,PASS,frozen advisor weight for IEF
+2022-06-01,balanced,False,8,T1,GLD,advisor_weight,11.9,pct.1,0.11885100245302942,identity+times_100,0,142,147,PASS,frozen advisor weight for GLD
+2022-06-01,balanced,False,9,T1,VNQ,advisor_weight,3.4,pct.1,0.034234373571577076,identity+times_100,0,159,163,PASS,frozen advisor weight for VNQ
+2022-06-01,balanced,False,10,T5,AGG,largest,advisor_weights,-,"{SPY=0.08133750128361827, QQQ=0.06267911631155736, EFA=0.05054494582849013, EEM=0.04908479730999394, AGG=0.33756977790724507, IEF=0.26569848533448875, GLD=0.11885100245302942, VNQ=0.034234373571577076}",ranking_by_magnitude,1,183,190,PASS,max of advisor_weights = ['AGG']
+2022-06-01,balanced,False,11,T2,AGG,forecast_vol,0.30,pct.2,0.00296969090344641,identity+times_100,2,260,265,PASS,frozen forecast_vol for AGG (raw daily units)
+2022-06-01,balanced,False,12,T5,AGG,lowest,forecast_vols,-,"{SPY=0.014883665559557582, QQQ=0.01935194431415807, EFA=0.013447185989234127, EEM=0.01502708989361034, AGG=0.00296969090344641, IEF=0.004880609733227298, GLD=0.008848046483157644, VNQ=0.015080016508985598}",ranking_by_magnitude,2,279,285,PASS,min of forecast_vols = ['AGG']
+2022-06-01,balanced,False,13,T4,AGG,w_adv_minus_w_cls,positive,-,0.06245659342780207,difference+sign,3,354,365,PASS,sign(w_adv_minus_w_cls[AGG]) = positive
+2022-06-01,balanced,False,14,T4,GLD,w_adv_minus_w_cls,negative,-,-0.04479742903521010,difference+sign,3,374,381,PASS,sign(w_adv_minus_w_cls[GLD]) = negative
+2022-06-01,balanced,False,15,T3,AGG,AGG,10.1,pp.1,0.10143810247360555,identity+times_100,5,564,586,PASS,"phi[feature=AGG, output=AGG]"
+2022-06-01,balanced,False,16,T5,AGG,largest_abs_contribution,attributions[output=AGG],-,"{SPY=0.007464336916953289, QQQ=0.006139618684294682, EFA=0.0029807833240858986, EEM=0.0024506727537463276, AGG=0.10143810247360555, IEF=0.019791783253338597, GLD=0.0018807766396170605, VNQ=0.0020350907530017463}",ranking_by_magnitude (absolute value),5,475,482,PASS,max of attributions[output=AGG] = ['AGG']
+2022-06-01,growth,False,0,T6,profile,-,growth,-,growth,identity,0,0,22,PASS,cell profile
+2022-06-01,growth,False,1,T6,date,-,2022-06-01,-,2022-06-01,identity,0,26,36,PASS,cell date
+2022-06-01,growth,False,2,T1,SPY,advisor_weight,11.2,pct.1,0.11191177117272431,identity+times_100,0,60,65,PASS,frozen advisor weight for SPY
+2022-06-01,growth,False,3,T1,QQQ,advisor_weight,8.7,pct.1,0.08742789552392309,identity+times_100,0,74,78,PASS,frozen advisor weight for QQQ
+2022-06-01,growth,False,4,T1,EFA,advisor_weight,6.8,pct.1,0.06791083973136747,identity+times_100,0,87,91,PASS,frozen advisor weight for EFA
+2022-06-01,growth,False,5,T1,EEM,advisor_weight,6.7,pct.1,0.06675312733807537,identity+times_100,0,100,104,PASS,frozen advisor weight for EEM
+2022-06-01,growth,False,6,T1,AGG,advisor_weight,23.8,pct.1,0.23781912243353137,identity+times_100,0,113,118,PASS,frozen advisor weight for AGG
+2022-06-01,growth,False,7,T1,IEF,advisor_weight,22.5,pct.1,0.22452466906795787,identity+times_100,0,127,132,PASS,frozen advisor weight for IEF
+2022-06-01,growth,False,8,T1,GLD,advisor_weight,16.4,pct.1,0.16412751664716208,identity+times_100,0,141,146,PASS,frozen advisor weight for GLD
+2022-06-01,growth,False,9,T1,VNQ,advisor_weight,4.0,pct.1,0.03952505808525855,identity+times_100,0,158,162,PASS,frozen advisor weight for VNQ
+2022-06-01,growth,False,10,T5,AGG,largest,advisor_weights,-,"{SPY=0.11191177117272431, QQQ=0.08742789552392309, EFA=0.06791083973136747, EEM=0.06675312733807537, AGG=0.23781912243353137, IEF=0.22452466906795787, GLD=0.16412751664716208, VNQ=0.03952505808525855}",ranking_by_magnitude,1,182,189,PASS,max of advisor_weights = ['AGG']
+2022-06-01,growth,False,11,T2,AGG,forecast_vol,0.30,pct.2,0.00296969090344641,identity+times_100,2,259,264,PASS,frozen forecast_vol for AGG (raw daily units)
+2022-06-01,growth,False,12,T5,AGG,lowest,forecast_vols,-,"{SPY=0.014883665559557582, QQQ=0.01935194431415807, EFA=0.013447185989234127, EEM=0.01502708989361034, AGG=0.00296969090344641, IEF=0.004880609733227298, GLD=0.008848046483157644, VNQ=0.015080016508985598}",ranking_by_magnitude,2,278,284,PASS,min of forecast_vols = ['AGG']
+2022-06-01,growth,False,13,T4,AGG,w_adv_minus_w_cls,positive,-,0.05078097563055522,difference+sign,3,353,364,PASS,sign(w_adv_minus_w_cls[AGG]) = positive
+2022-06-01,growth,False,14,T4,GLD,w_adv_minus_w_cls,negative,-,-0.05395756994078504,difference+sign,3,373,380,PASS,sign(w_adv_minus_w_cls[GLD]) = negative
+2022-06-01,growth,False,15,T3,AGG,GLD,-1.9,pp.1,-0.019276625063199212,identity+times_100,5,563,585,PASS,"phi[feature=AGG, output=GLD]"
+2022-06-01,growth,False,16,T5,AGG,largest_abs_contribution,attributions[output=GLD],-,"{SPY=0.006326691740602439, QQQ=0.005277964370067914, EFA=0.0024714324387142194, EEM=0.002057045837356817, AGG=0.019276625063199212, IEF=0.010299335933483894, GLD=0.006797797790530729, VNQ=0.0014506767668298203}",ranking_by_magnitude (absolute value),5,474,481,PASS,max of attributions[output=GLD] = ['AGG']
+2024-12-02,conservative,False,0,T6,profile,-,conservative,-,conservative,identity,0,0,28,PASS,cell profile
+2024-12-02,conservative,False,1,T6,date,-,2024-12-02,-,2024-12-02,identity,0,32,42,PASS,cell date
+2024-12-02,conservative,False,2,T1,SPY,advisor_weight,9.3,pct.1,0.09328904614997659,identity+times_100,0,66,70,PASS,frozen advisor weight for SPY
+2024-12-02,conservative,False,3,T1,QQQ,advisor_weight,8.0,pct.1,0.08014589812849798,identity+times_100,0,79,83,PASS,frozen advisor weight for QQQ
+2024-12-02,conservative,False,4,T1,EFA,advisor_weight,2.9,pct.1,0.029250880085469555,identity+times_100,0,92,96,PASS,frozen advisor weight for EFA
+2024-12-02,conservative,False,5,T1,EEM,advisor_weight,2.8,pct.1,0.02765514117827076,identity+times_100,0,105,109,PASS,frozen advisor weight for EEM
+2024-12-02,conservative,False,6,T1,AGG,advisor_weight,37.9,pct.1,0.3794946673249417,identity+times_100,0,118,123,PASS,frozen advisor weight for AGG
+2024-12-02,conservative,False,7,T1,IEF,advisor_weight,30.0,pct.1,0.2997651828284153,identity+times_100,0,132,137,PASS,frozen advisor weight for IEF
+2024-12-02,conservative,False,8,T1,GLD,advisor_weight,5.0,pct.1,0.05035604400441044,identity+times_100,0,146,150,PASS,frozen advisor weight for GLD
+2024-12-02,conservative,False,9,T1,VNQ,advisor_weight,4.0,pct.1,0.04004314030001774,identity+times_100,0,162,166,PASS,frozen advisor weight for VNQ
+2024-12-02,conservative,False,10,T5,AGG,largest,advisor_weights,-,"{SPY=0.09328904614997659, QQQ=0.08014589812849798, EFA=0.029250880085469555, EEM=0.02765514117827076, AGG=0.3794946673249417, IEF=0.2997651828284153, GLD=0.05035604400441044, VNQ=0.04004314030001774}",ranking_by_magnitude,1,186,193,PASS,max of advisor_weights = ['AGG']
+2024-12-02,conservative,False,11,T2,AGG,forecast_vol,0.32,pct.2,0.003186394614814109,identity+times_100,2,263,268,PASS,frozen forecast_vol for AGG (raw daily units)
+2024-12-02,conservative,False,12,T5,AGG,lowest,forecast_vols,-,"{SPY=0.008295212531746234, QQQ=0.010827919422911062, EFA=0.009458525805633021, EEM=0.011491848673824977, AGG=0.003186394614814109, IEF=0.004318576239056208, GLD=0.011222148510746342, VNQ=0.010698245324297698}",ranking_by_magnitude,2,282,288,PASS,min of forecast_vols = ['AGG']
+2024-12-02,conservative,False,13,T4,AGG,w_adv_minus_w_cls,positive,-,0.0407419191287309,difference+sign,3,357,368,PASS,sign(w_adv_minus_w_cls[AGG]) = positive
+2024-12-02,conservative,False,14,T4,SPY,w_adv_minus_w_cls,negative,-,-0.01848156591071731,difference+sign,3,377,384,PASS,sign(w_adv_minus_w_cls[SPY]) = negative
+2024-12-02,conservative,False,15,T3,AGG,AGG,4.4,pp.1,0.04409317533234584,identity+times_100,5,567,588,PASS,"phi[feature=AGG, output=AGG]"
+2024-12-02,conservative,False,16,T5,AGG,largest_abs_contribution,attributions[output=AGG],-,"{SPY=0.0037583152509493146, QQQ=0.001502643135912361, EFA=0.0008781017129033615, EEM=0.0009468377136725856, AGG=0.04409317533234584, IEF=0.007350008440239545, GLD=0.003572787901974818, VNQ=0.00048564232516177825}",ranking_by_magnitude (absolute value),5,478,485,PASS,max of attributions[output=AGG] = ['AGG']
+2024-12-02,balanced,True,0,T6,profile,-,balanced,-,balanced,identity,0,0,24,PASS,cell profile
+2024-12-02,balanced,True,1,T6,date,-,2024-12-02,-,2024-12-02,identity,0,28,38,PASS,cell date
+2024-12-02,balanced,True,2,T1,SPY,advisor_weight,14.1,pct.1,0.14109534938031104,identity+times_100,0,62,67,PASS,frozen advisor weight for SPY
+2024-12-02,balanced,True,3,T1,QQQ,advisor_weight,11.7,pct.1,0.11734152046106551,identity+times_100,0,76,81,PASS,frozen advisor weight for QQQ
+2024-12-02,balanced,True,4,T1,EFA,advisor_weight,6.0,pct.1,0.060453491106364984,identity+times_100,0,90,94,PASS,frozen advisor weight for EFA
+2024-12-02,balanced,True,5,T1,EEM,advisor_weight,5.5,pct.1,0.05533039347054884,identity+times_100,0,103,107,PASS,frozen advisor weight for EEM
+2024-12-02,balanced,True,6,T1,AGG,advisor_weight,28.3,pct.1,0.28323468605737295,identity+times_100,0,116,121,PASS,frozen advisor weight for AGG
+2024-12-02,balanced,True,7,T1,IEF,advisor_weight,23.5,pct.1,0.23508534268634776,identity+times_100,0,130,135,PASS,frozen advisor weight for IEF
+2024-12-02,balanced,True,8,T1,GLD,advisor_weight,5.8,pct.1,0.05838695772086517,identity+times_100,0,144,148,PASS,frozen advisor weight for GLD
+2024-12-02,balanced,True,9,T1,VNQ,advisor_weight,4.9,pct.1,0.04907225911712361,identity+times_100,0,160,164,PASS,frozen advisor weight for VNQ
+2024-12-02,balanced,True,10,T5,AGG,largest,advisor_weights,-,"{SPY=0.14109534938031104, QQQ=0.11734152046106551, EFA=0.060453491106364984, EEM=0.05533039347054884, AGG=0.28323468605737295, IEF=0.23508534268634776, GLD=0.05838695772086517, VNQ=0.04907225911712361}",ranking_by_magnitude,1,184,191,PASS,max of advisor_weights = ['AGG']
+2024-12-02,balanced,True,11,T2,AGG,forecast_vol,0.32,pct.2,0.003186394614814109,identity+times_100,2,261,266,PASS,frozen forecast_vol for AGG (raw daily units)
+2024-12-02,balanced,True,12,T5,AGG,lowest,forecast_vols,-,"{SPY=0.008295212531746234, QQQ=0.010827919422911062, EFA=0.009458525805633021, EEM=0.011491848673824977, AGG=0.003186394614814109, IEF=0.004318576239056208, GLD=0.011222148510746342, VNQ=0.010698245324297698}",ranking_by_magnitude,2,280,286,PASS,min of forecast_vols = ['AGG']
+2024-12-02,balanced,True,13,T4,AGG,w_adv_minus_w_cls,positive,-,0.03883774741979065,difference+sign,3,355,366,PASS,sign(w_adv_minus_w_cls[AGG]) = positive
+2024-12-02,balanced,True,14,T4,SPY,w_adv_minus_w_cls,negative,-,-0.02231586518295496,difference+sign,3,375,382,PASS,sign(w_adv_minus_w_cls[SPY]) = negative
+2024-12-02,balanced,True,15,T3,AGG,AGG,3.7,pp.1,0.03719255208767154,identity+times_100,5,565,586,PASS,"phi[feature=AGG, output=AGG]"
+2024-12-02,balanced,True,16,T5,AGG,largest_abs_contribution,attributions[output=AGG],-,"{SPY=0.00410491752539386, QQQ=0.001588970876679392, EFA=0.0013107704177761183, EEM=0.0013682374821011771, AGG=0.03719255208767154, IEF=0.004164769457524441, GLD=0.0029928056966330467, VNQ=0.00042987418432604494}",ranking_by_magnitude (absolute value),5,476,483,PASS,max of attributions[output=AGG] = ['AGG']
+2024-12-02,growth,False,0,T6,profile,-,growth,-,growth,identity,0,0,22,PASS,cell profile
+2024-12-02,growth,False,1,T6,date,-,2024-12-02,-,2024-12-02,identity,0,26,36,PASS,cell date
+2024-12-02,growth,False,2,T1,SPY,advisor_weight,19.4,pct.1,0.19414151710479524,identity+times_100,0,60,65,PASS,frozen advisor weight for SPY
+2024-12-02,growth,False,3,T1,QQQ,advisor_weight,15.9,pct.1,0.15891573151024216,identity+times_100,0,74,79,PASS,frozen advisor weight for QQQ
+2024-12-02,growth,False,4,T1,EFA,advisor_weight,8.8,pct.1,0.0881902170099447,identity+times_100,0,88,92,PASS,frozen advisor weight for EFA
+2024-12-02,growth,False,5,T1,EEM,advisor_weight,7.9,pct.1,0.07932866302851825,identity+times_100,0,101,105,PASS,frozen advisor weight for EEM
+2024-12-02,growth,False,6,T1,AGG,advisor_weight,18.2,pct.1,0.18196867073822817,identity+times_100,0,114,119,PASS,frozen advisor weight for AGG
+2024-12-02,growth,False,7,T1,IEF,advisor_weight,16.1,pct.1,0.16115491721752298,identity+times_100,0,128,133,PASS,frozen advisor weight for IEF
+2024-12-02,growth,False,8,T1,GLD,advisor_weight,7.2,pct.1,0.0724882311928103,identity+times_100,0,142,146,PASS,frozen advisor weight for GLD
+2024-12-02,growth,False,9,T1,VNQ,advisor_weight,6.4,pct.1,0.06381205219793815,identity+times_100,0,158,162,PASS,frozen advisor weight for VNQ
+2024-12-02,growth,False,10,T5,SPY,largest,advisor_weights,-,"{SPY=0.19414151710479524, QQQ=0.15891573151024216, EFA=0.0881902170099447, EEM=0.07932866302851825, AGG=0.18196867073822817, IEF=0.16115491721752298, GLD=0.0724882311928103, VNQ=0.06381205219793815}",ranking_by_magnitude,1,182,189,PASS,max of advisor_weights = ['SPY']
+2024-12-02,growth,False,11,T2,AGG,forecast_vol,0.32,pct.2,0.003186394614814109,identity+times_100,2,259,264,PASS,frozen forecast_vol for AGG (raw daily units)
+2024-12-02,growth,False,12,T5,AGG,lowest,forecast_vols,-,"{SPY=0.008295212531746234, QQQ=0.010827919422911062, EFA=0.009458525805633021, EEM=0.011491848673824977, AGG=0.003186394614814109, IEF=0.004318576239056208, GLD=0.011222148510746342, VNQ=0.010698245324297698}",ranking_by_magnitude,2,278,284,PASS,min of forecast_vols = ['AGG']
+2024-12-02,growth,False,13,T4,AGG,w_adv_minus_w_cls,positive,-,0.03012326216307859,difference+sign,3,353,364,PASS,sign(w_adv_minus_w_cls[AGG]) = positive
+2024-12-02,growth,False,14,T4,SPY,w_adv_minus_w_cls,negative,-,-0.02330041756317558,difference+sign,3,373,380,PASS,sign(w_adv_minus_w_cls[SPY]) = negative
+2024-12-02,growth,False,15,T3,AGG,AGG,2.7,pp.1,0.026602391470717333,identity+times_100,5,563,584,PASS,"phi[feature=AGG, output=AGG]"
+2024-12-02,growth,False,16,T5,AGG,largest_abs_contribution,attributions[output=AGG],-,"{SPY=0.003513441813264507, QQQ=0.0013389466833951228, EFA=0.0011897725742488299, EEM=0.0012205758189308682, AGG=0.026602391470717333, IEF=0.0017769020058269994, GLD=0.002312812999605674, VNQ=0.00034784880795459043}",ranking_by_magnitude (absolute value),5,474,481,PASS,max of attributions[output=AGG] = ['AGG']

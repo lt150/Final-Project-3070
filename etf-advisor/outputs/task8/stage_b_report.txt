@@ -1,0 +1,155 @@
+Task 8 Stage B — three-target LSTM sweep vs persistence
+
+GATE B1 PASS — baseline.parquet row counts match npz (train/val); (window_end, ticker) spot check 50 rows/split (seed 42) matches meta's npz row order
+GATE B2 PASS — val persistence metrics recomputed from baseline.parquet match Stage A's frozen values to < 1e-9 (RMSE 0.003544, MAE 0.002583, r 0.7811, std ratio 0.9984)
+GATE B3 PASS — log-safety: min y_vol train 0.000787011 | min y_vol val 0.00119069 | min vol_trail_20 train 0.000787011 | min vol_trail_20 val 0.00100457
+
+— val results, all 12 runs + persistence (sorted by RMSE) —
+        run target arch layers hidden  dropout params  val_rmse  val_mae    val_r  val_std_ratio    skill epochs best_epoch    wall_s
+      T1xA1     T1   A1      1     32 0.000000   5153  0.003122 0.002292 0.816891       0.819478 0.118964     11          1  9.000000
+      T2xA2     T2   A2      1     64 0.200000  18497  0.003123 0.002251 0.820027       0.852304 0.118530     18          8 19.900000
+      T1xA2     T1   A2      1     64 0.200000  18497  0.003150 0.002311 0.809251       0.823085 0.110960     11          1 12.300000
+      T2xA4     T2   A4      1    128 0.300000  69761  0.003156 0.002274 0.815744       0.892636 0.109456     18          8 50.700000
+      T1xA4     T1   A4      1    128 0.300000  69761  0.003212 0.002325 0.802375       0.842443 0.093570     11          1 25.700000
+      T2xA3     T2   A3      2     64 0.200000  51777  0.003215 0.002304 0.809811       0.892096 0.092639     18          8 56.500000
+      T2xA1     T2   A1      1     32 0.000000   5153  0.003219 0.002317 0.809086       0.837782 0.091462     14          4  8.900000
+      T3xA1     T3   A1      1     32 0.000000   5153  0.003230 0.002344 0.804356       0.829316 0.088471     19          9 11.500000
+      T3xA3     T3   A3      2     64 0.200000  51777  0.003236 0.002354 0.813981       0.777844 0.086651     13          3 37.800000
+      T3xA4     T3   A4      1    128 0.300000  69761  0.003280 0.002357 0.808274       0.786890 0.074481     13          3 31.100000
+      T3xA2     T3   A2      1     64 0.200000  18497  0.003303 0.002366 0.808760       0.775447 0.067956     12          2 13.400000
+      T1xA3     T1   A3      2     64 0.200000  51777  0.003342 0.002420 0.788986       0.860523 0.056836     11          1 33.100000
+persistence      -    -   None   None     None   None  0.003544 0.002583 0.781148       0.998355 0.000000   None       None      None
+
+=== best T1: T1xA1 (val RMSE 0.003122, skill +0.1190) ===
+
+per-ticker RMSE and skill (val):
+     ticker    n     rmse  rmse_persist     skill
+        AGG  483 0.001211      0.001089 -0.111623
+        EEM  483 0.003548      0.004785  0.258379
+        EFA  483 0.003339      0.003936  0.151625
+        GLD  483 0.002926      0.002653 -0.102733
+        IEF  483 0.001662      0.001503 -0.105620
+        QQQ  483 0.004474      0.004709  0.049833
+        SPY  483 0.003151      0.003767  0.163561
+        VNQ  483 0.003391      0.003902  0.130819
+MEAN(eq-wt) 3864 0.002963      0.003293  0.054280
+
+decile calibration (each forecaster bucketed by its own predicted decile):
+ decile  model_mean_pred  model_mean_actual  persist_mean_pred  persist_mean_actual
+      1         0.002845           0.002749           0.002270             0.002758
+      2         0.004164           0.004977           0.004293             0.005213
+      3         0.006342           0.007408           0.006054             0.007542
+      4         0.007861           0.008520           0.007317             0.008657
+      5         0.009025           0.009042           0.008501             0.008920
+      6         0.010043           0.009553           0.009566             0.009294
+      7         0.011053           0.011102           0.011001             0.011313
+      8         0.012214           0.013568           0.012808             0.013574
+      9         0.013887           0.014728           0.015906             0.015584
+     10         0.017975           0.018266           0.020745             0.017062
+
+conditional skill by within-ticker decile of vol_trail_20 (pre-registered exhibit; diagnostic only):
+ trail_decile   n  rmse_model  rmse_persist     skill
+            1 392    0.002519      0.003395  0.258002
+            2 384    0.002138      0.002773  0.229028
+            3 384    0.002005      0.001956 -0.025303
+            4 384    0.002745      0.002926  0.061982
+            5 392    0.003058      0.003186  0.039961
+            6 384    0.003695      0.003862  0.043360
+            7 384    0.003987      0.003925 -0.015789
+            8 384    0.003297      0.003059 -0.077965
+            9 384    0.003753      0.003503 -0.071237
+           10 392    0.003345      0.005616  0.404320
+
+=== best T2: T2xA2 (val RMSE 0.003123, skill +0.1185) ===
+
+per-ticker RMSE and skill (val):
+     ticker    n     rmse  rmse_persist     skill
+        AGG  483 0.000945      0.001089  0.132366
+        EEM  483 0.003490      0.004785  0.270572
+        EFA  483 0.003363      0.003936  0.145395
+        GLD  483 0.002545      0.002653  0.040831
+        IEF  483 0.001603      0.001503 -0.065902
+        QQQ  483 0.004465      0.004709  0.051857
+        SPY  483 0.003408      0.003767  0.095219
+        VNQ  483 0.003615      0.003902  0.073329
+MEAN(eq-wt) 3864 0.002929      0.003293  0.092958
+
+decile calibration (each forecaster bucketed by its own predicted decile):
+ decile  model_mean_pred  model_mean_actual  persist_mean_pred  persist_mean_actual
+      1         0.002065           0.002729           0.002270             0.002758
+      2         0.004352           0.004658           0.004293             0.005213
+      3         0.006978           0.007546           0.006054             0.007542
+      4         0.007886           0.008290           0.007317             0.008657
+      5         0.008623           0.008863           0.008501             0.008920
+      6         0.009424           0.010159           0.009566             0.009294
+      7         0.010385           0.011369           0.011001             0.011313
+      8         0.011836           0.012738           0.012808             0.013574
+      9         0.014104           0.015536           0.015906             0.015584
+     10         0.018515           0.018027           0.020745             0.017062
+
+conditional skill by within-ticker decile of vol_trail_20 (pre-registered exhibit; diagnostic only):
+ trail_decile   n  rmse_model  rmse_persist     skill
+            1 392    0.002394      0.003395  0.294791
+            2 384    0.002132      0.002773  0.231263
+            3 384    0.001963      0.001956 -0.003663
+            4 384    0.002461      0.002926  0.158767
+            5 392    0.003117      0.003186  0.021422
+            6 384    0.003589      0.003862  0.070658
+            7 384    0.004012      0.003925 -0.022377
+            8 384    0.003305      0.003059 -0.080599
+            9 384    0.003651      0.003503 -0.042229
+           10 392    0.003795      0.005616  0.324206
+
+=== best T3: T3xA1 (val RMSE 0.003230, skill +0.0885) ===
+
+per-ticker RMSE and skill (val):
+     ticker    n     rmse  rmse_persist     skill
+        AGG  483 0.000969      0.001089  0.110367
+        EEM  483 0.003905      0.004785  0.183910
+        EFA  483 0.003673      0.003936  0.066791
+        GLD  483 0.002438      0.002653  0.081172
+        IEF  483 0.001419      0.001503  0.056398
+        QQQ  483 0.004315      0.004709  0.083668
+        SPY  483 0.003353      0.003767  0.109861
+        VNQ  483 0.003997      0.003902 -0.024378
+MEAN(eq-wt) 3864 0.003008      0.003293  0.083474
+
+decile calibration (each forecaster bucketed by its own predicted decile):
+ decile  model_mean_pred  model_mean_actual  persist_mean_pred  persist_mean_actual
+      1         0.002472           0.002754           0.002270             0.002758
+      2         0.004558           0.004695           0.004293             0.005213
+      3         0.006631           0.007462           0.006054             0.007542
+      4         0.007795           0.007882           0.007317             0.008657
+      5         0.008653           0.009336           0.008501             0.008920
+      6         0.009537           0.010241           0.009566             0.009294
+      7         0.010586           0.011270           0.011001             0.011313
+      8         0.012042           0.013081           0.012808             0.013574
+      9         0.014123           0.016040           0.015906             0.015584
+     10         0.018144           0.017159           0.020745             0.017062
+
+conditional skill by within-ticker decile of vol_trail_20 (pre-registered exhibit; diagnostic only):
+ trail_decile   n  rmse_model  rmse_persist     skill
+            1 392    0.002513      0.003395  0.259638
+            2 384    0.002103      0.002773  0.241579
+            3 384    0.001921      0.001956  0.017757
+            4 384    0.002502      0.002926  0.144927
+            5 392    0.002965      0.003186  0.069156
+            6 384    0.003607      0.003862  0.066003
+            7 384    0.003888      0.003925  0.009232
+            8 384    0.003554      0.003059 -0.161869
+            9 384    0.004173      0.003503 -0.191022
+           10 392    0.004082      0.005616  0.273143
+
+— selection (pre-registered rule) —
+near-tie set (< 1% relative of best 0.003122): T1xA1 (0.003122), T1xA2 (0.003150), T2xA2 (0.003123)
+tie-break order: simpler target (T1 > T2 > T3), then fewer params
+SELECTED: T1xA1 — target T1, arch A1 (1x32 dropout 0.0, 5153 params), best epoch 1, val RMSE 0.003122, skill +0.1190
+frozen checkpoint: outputs/task8/models/T1_A1_seed42.pt
+
+— stability check, winner only (seeds 42/43/44) —
+  seed 42: 0.003122 | seed 43: 0.003119 | seed 44: 0.003088
+  mean 0.003110 | min 0.003088 | max 0.003122
+  persistence bar 0.003544: all seeds beat the bar
+  runner-up T2xA2 at 0.003123: no reordering at any seed
+
+STOP — Stage B complete. No test-set contact. Stage C evaluates ONLY T1xA1 (seed-42 weights, best epoch 1) against persistence, once.

@@ -1,0 +1,13 @@
+iteration,arm,persona,prompt_sha256,prompt_chars,response_chars,response,parse_verdict,parse_reason,extraction,extraction_matches_expected,rubric_trace,outcome,expected_profile,outcome_matches_expected,seq,done_reason,prompt_eval_count,eval_count,wall_seconds
+1,B,D1,afbc556ba60635d1f5768e4b1ba7abaebc2cc6fa05e25cceb634ac15b6f4a085,2092,12,conservative,VALID,exact match after registered normalization,-,-,-,conservative,conservative,True,5,stop,483,3,10.215
+1,B,D2,afbc556ba60635d1f5768e4b1ba7abaebc2cc6fa05e25cceb634ac15b6f4a085,2054,8,balanced,VALID,exact match after registered normalization,-,-,-,balanced,balanced,True,6,stop,476,2,10.174
+1,B,D3,afbc556ba60635d1f5768e4b1ba7abaebc2cc6fa05e25cceb634ac15b6f4a085,2062,6,growth,VALID,exact match after registered normalization,-,-,-,growth,growth,True,7,stop,479,2,10.185
+2,B,D4,afbc556ba60635d1f5768e4b1ba7abaebc2cc6fa05e25cceb634ac15b6f4a085,2136,7,clarify,VALID,exact match after registered normalization,-,-,-,clarify,clarify,True,3,stop,494,3,10.643
+3,B,D1,afbc556ba60635d1f5768e4b1ba7abaebc2cc6fa05e25cceb634ac15b6f4a085,2092,12,conservative,VALID,exact match after registered normalization,-,-,-,conservative,conservative,True,6,stop,483,3,10.301
+3,B,D2,afbc556ba60635d1f5768e4b1ba7abaebc2cc6fa05e25cceb634ac15b6f4a085,2054,8,balanced,VALID,exact match after registered normalization,-,-,-,balanced,balanced,True,7,stop,476,2,10.014
+3,B,D3,afbc556ba60635d1f5768e4b1ba7abaebc2cc6fa05e25cceb634ac15b6f4a085,2062,6,growth,VALID,exact match after registered normalization,-,-,-,growth,growth,True,8,stop,479,2,10.361
+3,B,D4,afbc556ba60635d1f5768e4b1ba7abaebc2cc6fa05e25cceb634ac15b6f4a085,2136,7,clarify,VALID,exact match after registered normalization,-,-,-,clarify,clarify,True,9,stop,494,3,10.605
+4,B,D1,afbc556ba60635d1f5768e4b1ba7abaebc2cc6fa05e25cceb634ac15b6f4a085,2092,12,conservative,VALID,exact match after registered normalization,-,-,-,conservative,conservative,True,6,stop,483,3,10.417
+4,B,D2,afbc556ba60635d1f5768e4b1ba7abaebc2cc6fa05e25cceb634ac15b6f4a085,2054,8,balanced,VALID,exact match after registered normalization,-,-,-,balanced,balanced,True,7,stop,476,2,10.205
+4,B,D3,afbc556ba60635d1f5768e4b1ba7abaebc2cc6fa05e25cceb634ac15b6f4a085,2062,6,growth,VALID,exact match after registered normalization,-,-,-,growth,growth,True,8,stop,479,2,10.435
+4,B,D4,afbc556ba60635d1f5768e4b1ba7abaebc2cc6fa05e25cceb634ac15b6f4a085,2136,7,clarify,VALID,exact match after registered normalization,-,-,-,clarify,clarify,True,9,stop,494,3,10.528

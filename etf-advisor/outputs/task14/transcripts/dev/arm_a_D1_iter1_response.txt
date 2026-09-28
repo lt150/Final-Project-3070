@@ -1,0 +1,5 @@
+Q1: short
+Q2: sell
+Q3: preserve
+Q4: low
+Q5: none

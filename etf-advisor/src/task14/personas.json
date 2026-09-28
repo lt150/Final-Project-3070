@@ -1,0 +1,301 @@
+{
+  "counts": {"dev": 4, "clear_cut": 9, "ambiguous": 5, "evaluation": 14},
+  "personas": [
+    {
+      "id": "D1",
+      "kind": "dev",
+      "note": "expected: conservative; extraction short/sell/preserve/low/none",
+      "answers": {
+        "Q1": "Probably within two years.",
+        "Q2": "I'd cut my losses and get out.",
+        "Q3": "Keeping it safe, definitely.",
+        "Q4": "Income's shaky and I've got maybe a month put aside.",
+        "Q5": "Never invested before."
+      },
+      "expected_extraction": {"Q1": "short", "Q2": "sell", "Q3": "preserve", "Q4": "low", "Q5": "none"},
+      "expected_profile": "conservative",
+      "expected_outcome": "conservative",
+      "acceptable": null,
+      "nonconformant_note": null
+    },
+    {
+      "id": "D2",
+      "kind": "dev",
+      "note": "expected: balanced; extraction medium/hold/balanced/medium/some",
+      "answers": {
+        "Q1": "Something like seven years.",
+        "Q2": "I'd leave it alone.",
+        "Q3": "A bit of both.",
+        "Q4": "Steady enough, three months saved.",
+        "Q5": "Some funds here and there."
+      },
+      "expected_extraction": {"Q1": "medium", "Q2": "hold", "Q3": "balanced", "Q4": "medium", "Q5": "some"},
+      "expected_profile": "balanced",
+      "expected_outcome": "balanced",
+      "acceptable": null,
+      "nonconformant_note": null
+    },
+    {
+      "id": "D3",
+      "kind": "dev",
+      "note": "expected: growth; extraction long/buy_more/grow/high/experienced",
+      "answers": {
+        "Q1": "Twenty years, easily.",
+        "Q2": "I'd put more in.",
+        "Q3": "Grow it as much as possible.",
+        "Q4": "Very stable, a year's buffer.",
+        "Q5": "I've invested through two crashes."
+      },
+      "expected_extraction": {"Q1": "long", "Q2": "buy_more", "Q3": "grow", "Q4": "high", "Q5": "experienced"},
+      "expected_profile": "growth",
+      "expected_outcome": "growth",
+      "acceptable": null,
+      "nonconformant_note": null
+    },
+    {
+      "id": "D4",
+      "kind": "dev",
+      "source": "docs/task14_amendments.md, T14-A2 -- NOT the register",
+      "note": "outcome = clarify for BOTH arms. Arm A: Q1, Q2, Q3 must extract unclear (routing clarify(Q1)); Q4 and Q5 are unconstrained at dev (unclear or a domain value both acceptable).",
+      "answers": {
+        "Q1": "Soon -- although really it's for when I retire in thirty years.",
+        "Q2": "Sell it all, or maybe double down, depends on my mood.",
+        "Q3": "I want it completely safe and also to double every year.",
+        "Q4": "Depends on the month.",
+        "Q5": "Sort of."
+      },
+      "expected_extraction": null,
+      "expected_profile": null,
+      "expected_outcome": "clarify",
+      "expected_unclear": ["Q1", "Q2", "Q3"],
+      "unconstrained": ["Q4", "Q5"],
+      "expected_clarify_question": 1,
+      "acceptable": null,
+      "nonconformant_note": null
+    },
+    {
+      "id": "P-C1",
+      "kind": "clear_cut",
+      "note": "conservative; short/sell/preserve/low/none",
+      "answers": {
+        "Q1": "I'll probably start drawing on it within a couple of years.",
+        "Q2": "I'd sell before it got worse.",
+        "Q3": "Protecting it. I can't afford to lose this.",
+        "Q4": "I'm retired on a fixed pension; savings would cover about two months.",
+        "Q5": "Never really invested beyond fixed deposits."
+      },
+      "expected_extraction": {"Q1": "short", "Q2": "sell", "Q3": "preserve", "Q4": "low", "Q5": "none"},
+      "expected_profile": "conservative",
+      "acceptable": null,
+      "nonconformant_note": null
+    },
+    {
+      "id": "P-C2",
+      "kind": "clear_cut",
+      "note": "the capacity-guard case (conservative; short/buy_more/grow/high/experienced; rubric: score 8 capped by short horizon)",
+      "answers": {
+        "Q1": "House down-payment in about two years.",
+        "Q2": "Honestly I'd buy the dip.",
+        "Q3": "Grow it as fast as possible.",
+        "Q4": "Stable job, six months saved.",
+        "Q5": "I trade stocks regularly."
+      },
+      "expected_extraction": {"Q1": "short", "Q2": "buy_more", "Q3": "grow", "Q4": "high", "Q5": "experienced"},
+      "expected_profile": "conservative",
+      "acceptable": null,
+      "nonconformant_note": null
+    },
+    {
+      "id": "P-C3",
+      "kind": "clear_cut",
+      "note": "conservative; medium/sell/preserve/low/none; score 1",
+      "answers": {
+        "Q1": "Maybe five years, hard to say \u2014 five to seven.",
+        "Q2": "I'd panic and get out.",
+        "Q3": "Mostly keeping it safe.",
+        "Q4": "Freelance, income swings a lot, maybe a month saved.",
+        "Q5": "No, this is my first time."
+      },
+      "expected_extraction": {"Q1": "medium", "Q2": "sell", "Q3": "preserve", "Q4": "low", "Q5": "none"},
+      "expected_profile": "conservative",
+      "acceptable": null,
+      "nonconformant_note": null
+    },
+    {
+      "id": "P-B1",
+      "kind": "clear_cut",
+      "note": "balanced; medium/hold/balanced/medium/some; score 5",
+      "answers": {
+        "Q1": "Around eight years, for my kid's university.",
+        "Q2": "I'd sit tight.",
+        "Q3": "A bit of both, honestly.",
+        "Q4": "Steady salary, three months put aside.",
+        "Q5": "I hold some index funds."
+      },
+      "expected_extraction": {"Q1": "medium", "Q2": "hold", "Q3": "balanced", "Q4": "medium", "Q5": "some"},
+      "expected_profile": "balanced",
+      "acceptable": null,
+      "nonconformant_note": null
+    },
+    {
+      "id": "P-B2",
+      "kind": "clear_cut",
+      "note": "balanced; long/hold/balanced/medium/some; score 6",
+      "answers": {
+        "Q1": "Fifteen years or so \u2014 this is for retirement.",
+        "Q2": "Hold on, maybe rebalance.",
+        "Q3": "Growth matters but I don't want wild swings.",
+        "Q4": "Both of us work, decent buffer \u2014 call it four months.",
+        "Q5": "A little, mostly through my pension scheme."
+      },
+      "expected_extraction": {"Q1": "long", "Q2": "hold", "Q3": "balanced", "Q4": "medium", "Q5": "some"},
+      "expected_profile": "balanced",
+      "acceptable": null,
+      "nonconformant_note": null
+    },
+    {
+      "id": "P-B3",
+      "kind": "clear_cut",
+      "note": "balanced; medium/buy_more/preserve/high/some; score 6, medium cap consistent",
+      "answers": {
+        "Q1": "Six years, give or take.",
+        "Q2": "I'd probably add a bit more while it's cheap.",
+        "Q3": "Keeping it safe first, growth second.",
+        "Q4": "Very stable \u2014 government job, six months saved.",
+        "Q5": "Some ETFs over the years."
+      },
+      "expected_extraction": {"Q1": "medium", "Q2": "buy_more", "Q3": "preserve", "Q4": "high", "Q5": "some"},
+      "expected_profile": "balanced",
+      "acceptable": null,
+      "nonconformant_note": null
+    },
+    {
+      "id": "P-G1",
+      "kind": "clear_cut",
+      "note": "growth; long/buy_more/grow/high/experienced; score 10",
+      "answers": {
+        "Q1": "Twenty-plus years \u2014 it's for early retirement.",
+        "Q2": "Buy more; that's a sale.",
+        "Q3": "Maximum growth, I have time.",
+        "Q4": "High and stable, over a year of expenses saved.",
+        "Q5": "Very comfortable \u2014 I held through 2020 and 2022 without selling."
+      },
+      "expected_extraction": {"Q1": "long", "Q2": "buy_more", "Q3": "grow", "Q4": "high", "Q5": "experienced"},
+      "expected_profile": "growth",
+      "acceptable": null,
+      "nonconformant_note": null
+    },
+    {
+      "id": "P-G2",
+      "kind": "clear_cut",
+      "note": "growth; long/buy_more/grow/high/some; score 9",
+      "answers": {
+        "Q1": "No plans to touch it for at least fifteen years.",
+        "Q2": "Keep buying monthly like always.",
+        "Q3": "Grow it \u2014 inflation eats anything idle.",
+        "Q4": "Stable tech salary, six months of buffer.",
+        "Q5": "A few years of ETF investing."
+      },
+      "expected_extraction": {"Q1": "long", "Q2": "buy_more", "Q3": "grow", "Q4": "high", "Q5": "some"},
+      "expected_profile": "growth",
+      "acceptable": null,
+      "nonconformant_note": null
+    },
+    {
+      "id": "P-G3",
+      "kind": "clear_cut",
+      "note": "growth; long/hold/grow/high/experienced; score 9",
+      "answers": {
+        "Q1": "Twelve years minimum.",
+        "Q2": "I'd hold; drops don't bother me.",
+        "Q3": "Long-term growth is the whole point.",
+        "Q4": "Dual income, healthy buffer.",
+        "Q5": "Experienced \u2014 stocks and funds for a decade."
+      },
+      "expected_extraction": {"Q1": "long", "Q2": "hold", "Q3": "grow", "Q4": "high", "Q5": "experienced"},
+      "expected_profile": "growth",
+      "acceptable": null,
+      "nonconformant_note": null
+    },
+    {
+      "id": "P-X1",
+      "kind": "ambiguous",
+      "note": "borderline conservative/balanced",
+      "answers": {
+        "Q1": "Four years, maybe five.",
+        "Q2": "I'd trim it back a little but not exit completely.",
+        "Q3": "Safety first, though I'd like some growth.",
+        "Q4": "Reasonably stable, two or three months saved.",
+        "Q5": "Dabbled once or twice."
+      },
+      "expected_extraction": null,
+      "expected_profile": null,
+      "acceptable": ["conservative", "balanced", "clarify"],
+      "nonconformant_note": "growth, malformed"
+    },
+    {
+      "id": "P-X2",
+      "kind": "ambiguous",
+      "note": "borderline balanced/growth",
+      "answers": {
+        "Q1": "Ten years, roughly.",
+        "Q2": "Buy more, within reason.",
+        "Q3": "Growth, but I'd hate a huge drawdown.",
+        "Q4": "Stable, five months saved.",
+        "Q5": "Fairly experienced."
+      },
+      "expected_extraction": null,
+      "expected_profile": null,
+      "acceptable": ["balanced", "growth", "clarify"],
+      "nonconformant_note": "conservative, malformed"
+    },
+    {
+      "id": "P-X3",
+      "kind": "ambiguous",
+      "note": "contradictory",
+      "answers": {
+        "Q1": "Next year, but also this is retirement money for 2050.",
+        "Q2": "I'd sell everything and also double down.",
+        "Q3": "Total safety and maximum growth.",
+        "Q4": "Stable-ish.",
+        "Q5": "Yes and no."
+      },
+      "expected_extraction": null,
+      "expected_profile": null,
+      "acceptable": ["clarify"],
+      "nonconformant_note": null
+    },
+    {
+      "id": "P-X4",
+      "kind": "ambiguous",
+      "note": "refusal / off-topic",
+      "answers": {
+        "Q1": "Why do you need to know that?",
+        "Q2": "Just tell me which crypto to buy.",
+        "Q3": "Whatever makes the most money by Friday.",
+        "Q4": "None of your business.",
+        "Q5": "I watched some videos."
+      },
+      "expected_extraction": null,
+      "expected_profile": null,
+      "acceptable": ["clarify"],
+      "nonconformant_note": null
+    },
+    {
+      "id": "P-X5",
+      "kind": "ambiguous",
+      "note": "out-of-schema aggressive",
+      "answers": {
+        "Q1": "Decades \u2014 this is play money.",
+        "Q2": "Buy more with leverage if I could.",
+        "Q3": "Maximum aggression \u2014 200% equity if you offered it.",
+        "Q4": "Very high income, big buffer.",
+        "Q5": "I trade options."
+      },
+      "expected_extraction": null,
+      "expected_profile": null,
+      "acceptable": ["growth"],
+      "nonconformant_note": null
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+iteration,arm,persona,prompt_sha256,prompt_chars,response_chars,response,parse_verdict,parse_reason,extraction,extraction_matches_expected,rubric_trace,outcome,expected_profile,outcome_matches_expected,seq,done_reason,prompt_eval_count,eval_count,wall_seconds
+1,A,D1,6b3cf1d87644d853e5cb6d6b944b1f4fb1bf423e101cd3325500eead09f0a28d,1737,48,"Q1: short
+Q2: sell
+Q3: preserve
+Q4: low
+Q5: none",VALID,five valid lines,short/sell/preserve/low/none,True,0+0+0+0+0=0; score_profile=conservative; cap=conservative; min -> conservative,conservative,conservative,True,2,stop,454,25,12.583
+1,A,D2,6b3cf1d87644d853e5cb6d6b944b1f4fb1bf423e101cd3325500eead09f0a28d,1699,52,"Q1: medium
+Q2: hold
+Q3: balanced
+Q4: medium
+Q5: some",VALID,five valid lines,medium/hold/balanced/medium/some,True,1+1+1+1+1=5; score_profile=balanced; cap=balanced; min -> balanced,balanced,balanced,True,3,stop,447,25,12.366
+1,A,D3,6b3cf1d87644d853e5cb6d6b944b1f4fb1bf423e101cd3325500eead09f0a28d,1707,55,"Q1: long
+Q2: buy_more
+Q3: grow
+Q4: high
+Q5: experienced",VALID,five valid lines,long/buy_more/grow/high/experienced,True,2+2+2+2+2=10; score_profile=growth; cap=growth; min -> growth,growth,growth,True,4,stop,450,26,12.487
+2,A,D4,6b3cf1d87644d853e5cb6d6b944b1f4fb1bf423e101cd3325500eead09f0a28d,1781,56,"Q1: long
+Q2: unclear
+Q3: unclear
+Q4: unclear
+Q5: unclear",VALID,five valid lines,long/unclear/unclear/unclear/unclear,-,unclear at Q2 -> clarify,clarify,clarify,True,2,stop,465,25,12.798
+3,A,D1,cf8a3302bded78d8e674268d43c1d87314d304dd6720bcb8843f8270821e9b31,1994,48,"Q1: short
+Q2: sell
+Q3: preserve
+Q4: low
+Q5: none",VALID,five valid lines,short/sell/preserve/low/none,True,0+0+0+0+0=0; score_profile=conservative; cap=conservative; min -> conservative,conservative,conservative,True,2,stop,507,25,14.547
+3,A,D2,cf8a3302bded78d8e674268d43c1d87314d304dd6720bcb8843f8270821e9b31,1956,52,"Q1: medium
+Q2: hold
+Q3: balanced
+Q4: medium
+Q5: some",VALID,five valid lines,medium/hold/balanced/medium/some,True,1+1+1+1+1=5; score_profile=balanced; cap=balanced; min -> balanced,balanced,balanced,True,3,stop,500,25,13.577
+3,A,D3,cf8a3302bded78d8e674268d43c1d87314d304dd6720bcb8843f8270821e9b31,1964,55,"Q1: long
+Q2: buy_more
+Q3: grow
+Q4: high
+Q5: experienced",VALID,five valid lines,long/buy_more/grow/high/experienced,True,2+2+2+2+2=10; score_profile=growth; cap=growth; min -> growth,growth,growth,True,4,stop,503,26,13.860
+3,A,D4,cf8a3302bded78d8e674268d43c1d87314d304dd6720bcb8843f8270821e9b31,2038,56,"Q1: long
+Q2: unclear
+Q3: unclear
+Q4: unclear
+Q5: unclear",VALID,five valid lines,long/unclear/unclear/unclear/unclear,-,unclear at Q2 -> clarify,clarify,clarify,False,5,stop,518,25,13.987
+4,A,D1,a5760514e9d33e63e06984a3a8de5e6a956dc3d2176082e51ed6ffb3c792523b,2324,48,"Q1: short
+Q2: sell
+Q3: preserve
+Q4: low
+Q5: none",VALID,five valid lines,short/sell/preserve/low/none,True,0+0+0+0+0=0; score_profile=conservative; cap=conservative; min -> conservative,conservative,conservative,True,2,stop,582,25,14.912
+4,A,D2,a5760514e9d33e63e06984a3a8de5e6a956dc3d2176082e51ed6ffb3c792523b,2286,52,"Q1: medium
+Q2: hold
+Q3: balanced
+Q4: medium
+Q5: some",VALID,five valid lines,medium/hold/balanced/medium/some,True,1+1+1+1+1=5; score_profile=balanced; cap=balanced; min -> balanced,balanced,balanced,True,3,stop,575,25,14.638
+4,A,D3,a5760514e9d33e63e06984a3a8de5e6a956dc3d2176082e51ed6ffb3c792523b,2294,55,"Q1: long
+Q2: buy_more
+Q3: grow
+Q4: high
+Q5: experienced",VALID,five valid lines,long/buy_more/grow/high/experienced,True,2+2+2+2+2=10; score_profile=growth; cap=growth; min -> growth,growth,growth,True,4,stop,578,26,14.966
+4,A,D4,a5760514e9d33e63e06984a3a8de5e6a956dc3d2176082e51ed6ffb3c792523b,2368,59,"Q1: unclear
+Q2: unclear
+Q3: unclear
+Q4: unclear
+Q5: unclear",VALID,five valid lines,unclear/unclear/unclear/unclear/unclear,-,unclear at Q1 -> clarify,clarify,clarify,True,5,stop,593,25,15.013

@@ -1,0 +1,67 @@
+Task 8 Stage A — artifact gates + persistence baseline
+
+GATE 1 PASS — shapes, split counts, window_end ranges, and row order all match the Task 7 contract
+GATE 2 PASS — y_vol reconstruction, 50 random samples per split (seed 42); max |diff| = 1.85e-16
+GATE 3a PASS — SPY-only full-range corr(trail20, fwd20) = 0.5310 reproduces the notebook audit figure 0.531 (|diff| < 0.001)
+GATE 3b PASS — pooled-train corr(vol_trail_20, y_vol) = 0.6596 matches the pinned checksum 0.6596426015679578 (|diff| < 1e-06)
+
+Persistence-strength characterisation (per Gate 3 amendment):
+0.531 is the SPY-only full-range audit figure, NOT a
+pooled one. The honest pooled-train figure is 0.6596; pooling
+across the tickers' persistent vol levels inflates it above every
+within-ticker corr — per-ticker train corr(vol_trail_20, y_vol):
+  AGG 0.2600 | EEM 0.4857 | EFA 0.5291 | GLD 0.4682 | IEF 0.4651 | QQQ 0.4883 | SPY 0.5124 | VNQ 0.5698
+
+— persistence on train (raw daily vol units) —
+  RMSE 0.005361 | MAE 0.002972 | Pearson r 0.6596 | std ratio 1.0002
+
+ticker    n     rmse
+   AGG 2749 0.001767
+   EEM 2749 0.006444
+   EFA 2749 0.006182
+   GLD 2749 0.003978
+   IEF 2749 0.001439
+   QQQ 2749 0.006382
+   SPY 2749 0.006130
+   VNQ 2749 0.007132
+
+  decile calibration (by predicted decile):
+ decile    n  mean_pred  mean_actual
+      1 2200   0.001690     0.001968
+      2 2199   0.002820     0.003169
+      3 2199   0.004309     0.005570
+      4 2199   0.005749     0.007553
+      5 2199   0.006953     0.008252
+      6 2199   0.008158     0.009119
+      7 2199   0.009523     0.009880
+      8 2199   0.011198     0.011288
+      9 2199   0.013635     0.012402
+     10 2200   0.022462     0.017172
+
+— persistence on val (raw daily vol units) —
+  RMSE 0.003544 | MAE 0.002583 | Pearson r 0.7811 | std ratio 0.9984
+
+ticker   n     rmse
+   AGG 483 0.001089
+   EEM 483 0.004785
+   EFA 483 0.003936
+   GLD 483 0.002653
+   IEF 483 0.001503
+   QQQ 483 0.004709
+   SPY 483 0.003767
+   VNQ 483 0.003902
+
+  decile calibration (by predicted decile):
+ decile   n  mean_pred  mean_actual
+      1 387   0.002270     0.002758
+      2 386   0.004293     0.005213
+      3 386   0.006054     0.007542
+      4 387   0.007317     0.008657
+      5 386   0.008501     0.008920
+      6 386   0.009566     0.009294
+      7 387   0.011001     0.011313
+      8 386   0.012808     0.013574
+      9 386   0.015906     0.015584
+     10 387   0.020745     0.017062
+
+baseline frame frozen to C:\Users\tianc\Desktop\Final Project\etf-advisor\outputs\task8\baseline.parquet

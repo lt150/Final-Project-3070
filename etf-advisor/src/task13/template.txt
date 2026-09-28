@@ -1,0 +1,29 @@
+You are writing a short factual explanation of a portfolio recommendation that has already been computed. Every number you are allowed to use is listed in the FACTS block below. Copy each number exactly as it is written there.
+
+FACTS
+{{FACTS}}
+
+STYLE RULES
+- Write English prose as exactly one paragraph of 4 to 8 sentences.
+- Use numerals only. Never write a quantity in words, and never use vague quantity words such as "about a third", "roughly half", "most of" or "double".
+- Write every percentage with the % symbol, exactly as it appears in the FACTS block. Do not round, rescale, convert or recompute any number.
+- Write the attribution value as "N percentage points", copying N exactly as it appears in the FACTS block.
+- Every bracketed slot in the sentence plan names a FACTS entry. Replace the slot with that entry's VALUE. Never write a slot name, a label, or a bracket in your output.
+- Introduce no number that is not in the FACTS block. Do not add totals, averages, counts, years or any other figure.
+- Do not give advice, recommendations, opinions, outlooks or warnings.
+- Never mention the profile and the volatility forecast in the same sentence. The volatility forecast does not depend on the profile.
+- Do not mention the covariance matrix, the correlation matrix, or how the risk model is built.
+- No markdown, no bullet points, no headings, no line breaks, no title.
+
+SENTENCE PLAN
+Write exactly these seven sentences, in this order, replacing each bracketed slot with the matching value from the FACTS block and keeping the surrounding wording unchanged.
+
+1. For the [profile] profile on [date], the advisor allocates [w]% to SPY, [w]% to QQQ, [w]% to EFA, [w]% to EEM, [w]% to AGG, [w]% to IEF, [w]% to GLD and [w]% to VNQ.
+2. [largest position] is the largest position in the portfolio.
+3. The model forecasts a daily volatility of [v]% for [lowest forecast daily volatility ticker], the lowest in the universe.
+4. Compared with the classical benchmark, the advisor overweights [largest overweight] and reduces its exposure to [largest underweight].
+5. The attributions decompose the advisor-versus-classical difference.
+6. The largest single contribution to the [attribution target ticker] weight difference comes from the [attribution source ticker] forecast, at [attribution value].
+7. This explanation is generated automatically and is not financial advice.
+
+Write the paragraph now. Output the paragraph only, with no preamble and no closing remark.

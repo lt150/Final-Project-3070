@@ -1,0 +1,23 @@
+{
+  "lstm": {
+    "rmse": 0.008548632958746112,
+    "mae": 0.0063802114206129145,
+    "directional_accuracy": 0.4994011976047904
+  },
+  "naive_persistence": {
+    "rmse": 0.011942085054795434,
+    "mae": 0.009003756612231278,
+    "directional_accuracy": 0.5017964071856288
+  },
+  "zero_return": {
+    "rmse": 0.008506742039209848,
+    "mae": 0.006296294110218139,
+    "directional_accuracy": null
+  },
+  "positive_class_share": 0.5465069860279441,
+  "n_test": 2505,
+  "direction_threshold": 0.0,
+  "direction_threshold_tuned_on_val": false,
+  "units": "daily simple return",
+  "naive_baseline_unit_handling": "features are saved StandardScaler-scaled; the daily_return feature was inverse-transformed via scaler.joblib into real return units"
+}

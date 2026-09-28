@@ -1,0 +1,5 @@
+Q1: medium
+Q2: buy_more
+Q3: balanced
+Q4: high
+Q5: experienced

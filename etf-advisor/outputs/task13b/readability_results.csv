@@ -1,0 +1,14 @@
+cell_id,profile,date,dev_flag,n_words,n_sentences,fre,fkgl
+2012-02-01_conservative,conservative,2012-02-01,,106,17,59.2,6.5
+2012-02-01_balanced,balanced,2012-02-01,,106,17,60.8,6.3
+2012-02-01_growth,growth,2012-02-01,,106,17,61.6,6.2
+2020-03-02_conservative,conservative,2020-03-02,,106,17,59.2,6.5
+2020-03-02_balanced,balanced,2020-03-02,,106,17,60.8,6.3
+2020-03-02_growth,growth,2020-03-02,,106,17,61.6,6.2
+2022-06-01_conservative,conservative,2022-06-01,,106,17,59.2,6.5
+2022-06-01_balanced,balanced,2022-06-01,,106,17,60.8,6.3
+2022-06-01_growth,growth,2022-06-01,,106,17,61.6,6.2
+2024-12-02_conservative,conservative,2024-12-02,,106,17,59.2,6.5
+2024-12-02_balanced,balanced,2024-12-02,anchor_dev,106,17,60.8,6.3
+2024-12-02_growth,growth,2024-12-02,,106,17,61.6,6.2
+mean_11_evaluation_cells,,,anchor_excluded,106.0,17.0,60.5,6.4

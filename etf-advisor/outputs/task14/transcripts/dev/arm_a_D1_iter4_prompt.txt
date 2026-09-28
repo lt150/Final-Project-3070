@@ -1,0 +1,41 @@
+You are labelling a completed questionnaire. For each of the five questions below, choose the ONE label from that question's label list that the person's own answer supports.
+
+Rules:
+- Choose a label only if the person's own answer supports that one label and no other.
+- If the answer supports more than one of that question's labels -- it gives two different answers, or changes its mind, or corrects itself -- then it supports none of them: output: unclear. This holds even when one part sounds more specific, more recent, or more final than the other: do not pick a winner between them, and do not reconcile them.
+- If the answer supports no label at all -- it is missing, evasive, off-topic, or too vague to decide -- output: unclear
+- Do not guess, and do not use one question's answer to label a different question. "unclear" is a correct and expected output whenever the text is not clear.
+
+Worked example of the second rule (synthetic; not one of the questions below):
+Answer: "Next month, though really this is money for my grandchildren."
+Label: unclear -- two different time frames are given, so neither one is supported.
+
+Q1. When do you expect to need most of this money?
+Answer: Probably within two years.
+Labels: short | medium | long | unclear
+short = less than 3 years, medium = 3 to 10 years inclusive, long = more than 10 years
+
+Q2. Suppose your portfolio lost 20% of its value within a year. What would you most likely do?
+Answer: I'd cut my losses and get out.
+Labels: sell | hold | buy_more | unclear
+
+Q3. What matters more to you: protecting what you have, or growing it as much as possible over time?
+Answer: Keeping it safe, definitely.
+Labels: preserve | balanced | grow | unclear
+
+Q4. How stable is your income, and do you have an emergency fund covering several months of expenses?
+Answer: Income's shaky and I've got maybe a month put aside.
+Labels: low | medium | high | unclear
+
+Q5. Have you invested in markets before, and how comfortable are you with market fluctuations?
+Answer: Never invested before.
+Labels: none | some | experienced | unclear
+
+Output EXACTLY these five lines, in this order, and nothing else:
+Q1: <label>
+Q2: <label>
+Q3: <label>
+Q4: <label>
+Q5: <label>
+
+Use only lowercase labels taken from the lists above. No explanation, no preamble, no blank lines, no extra words.

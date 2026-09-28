@@ -1,0 +1,5 @@
+Q1: medium
+Q2: hold
+Q3: balanced
+Q4: medium
+Q5: unclear

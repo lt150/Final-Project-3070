@@ -1,0 +1,5 @@
+seq,purpose,prompt_chars,response_chars,i1_model_ok,i1_model_reported,i2_no_thinking_ok,i2_thinking_evidence,i3_done,i3_done_reason,i4_prompt_eval_count,i4_budget,i4_ok,wall_seconds,total_duration_ns,load_duration_ns,prompt_eval_duration_ns,eval_count,eval_duration_ns,eval_tokens_per_second
+1,stage_a:warmup_discarded,72,495,True,qwen3.5:9b,True,none,True,stop,24,8064,True,13.933,11891638000,591666900,301523000,81,10980702000,7.3766
+2,stage_a:probe_rep1,72,495,True,qwen3.5:9b,True,none,True,stop,24,8064,True,13.842,11782122200,557095700,320683000,81,10885657000,7.4410
+3,stage_a:probe_rep2,72,495,True,qwen3.5:9b,True,none,True,stop,24,8064,True,13.736,11697977300,569847300,262795000,81,10861061000,7.4578
+4,stage_a:probe_rep3,72,495,True,qwen3.5:9b,True,none,True,stop,24,8064,True,13.835,11790444300,582220200,244869000,81,10957477000,7.3922

@@ -1,0 +1,5 @@
+Q1: short
+Q2: buy_more
+Q3: grow
+Q4: high
+Q5: experienced

@@ -1,0 +1,17 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python caches
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Jupyter (keep the committed notebook, ignore checkpoint copies)
+.ipynb_checkpoints/
+
+
+# OS / editor cruft
+.DS_Store
+.idea/
+.vscode/

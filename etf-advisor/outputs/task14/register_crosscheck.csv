@@ -1,0 +1,170 @@
+category,label,needle,found_verbatim
+question set,Sec. 1 Q1 text,| Q1 | When do you expect to need most of this money? |,True
+question set,Sec. 1 Q2 text,| Q2 | Suppose your portfolio lost 20% of its value within a year. What would you most likely do? |,True
+question set,Sec. 1 Q3 text,"| Q3 | What matters more to you: protecting what you have, or growing it as much as possible over time? |",True
+question set,Sec. 1 Q4 text,"| Q4 | How stable is your income, and do you have an emergency fund covering several months of expenses? |",True
+question set,Sec. 1 Q5 text,"| Q5 | Have you invested in markets before, and how comfortable are you with market fluctuations? |",True
+rubric mapping,Sec. 2 points Q1,Q1 short=0 medium=1 long=2,True
+rubric mapping,Sec. 2 points Q2,Q2 sell=0 hold=1 buy_more=2,True
+rubric mapping,Sec. 2 points Q3,Q3 preserve=0 balanced=1 grow=2,True
+rubric mapping,Sec. 2 points Q4,Q4 low=0 medium=1 high=2,True
+rubric mapping,Sec. 2 points Q5,Q5 none=0 some=1 experienced=2,True
+rubric mapping,Sec. 2 score,score = sum(points),True
+rubric mapping,Sec. 2 threshold conservative,score_profile = conservative if score <= 3,True
+rubric mapping,Sec. 2 threshold balanced,balanced if 4 <= score <= 7,True
+rubric mapping,Sec. 2 threshold growth,growth if score >= 8,True
+rubric mapping,Sec. 2 cap conservative,cap = conservative if Q1 == short,True
+rubric mapping,Sec. 2 cap balanced,balanced if Q1 == medium or Q4 == low,True
+rubric mapping,Sec. 2 cap growth,growth otherwise,True
+rubric mapping,Sec. 2 min rule,"profile = min(score_profile, cap) # conservative < balanced < growth",True
+rubric fixtures R1-R9,Sec. 2 fixture R1,"| R1 | short, sell, preserve, low, none | 0 | conservative | conservative | conservative |",True
+rubric fixtures R1-R9,Sec. 2 fixture R2,"| R2 | long, buy_more, grow, high, experienced | 10 | growth | growth | growth |",True
+rubric fixtures R1-R9,Sec. 2 fixture R3,"| R3 | medium, hold, preserve, medium, none | 3 | conservative | balanced | conservative |",True
+rubric fixtures R1-R9,Sec. 2 fixture R4,"| R4 | medium, hold, preserve, medium, some | 4 | balanced | balanced | balanced |",True
+rubric fixtures R1-R9,Sec. 2 fixture R5,"| R5 | long, hold, balanced, high, some | 7 | balanced | growth | balanced |",True
+rubric fixtures R1-R9,Sec. 2 fixture R6,"| R6 | long, buy_more, balanced, high, some | 8 | growth | growth | growth |",True
+rubric fixtures R1-R9,Sec. 2 fixture R7,"| R7 | short, buy_more, grow, high, experienced | 8 | growth | conservative | conservative |",True
+rubric fixtures R1-R9,Sec. 2 fixture R8,"| R8 | long, buy_more, grow, low, experienced | 8 | growth | balanced | balanced |",True
+rubric fixtures R1-R9,Sec. 2 fixture R9,"| R9 | medium, buy_more, grow, high, experienced | 9 | growth | balanced | balanced |",True
+parser fixtures PF1-PF8,Sec. 3 fixture PF1,| PF1 | `Q1: medium\nQ2: hold\nQ3: balanced\nQ4: medium\nQ5: some` | VALID extraction |,True
+parser fixtures PF1-PF8,Sec. 3 fixture PF2,| PF2 | four lines only (Q5 missing) | MALFORMED |,True
+parser fixtures PF1-PF8,Sec. 3 fixture PF3,| PF3 | `Q1: about five years so medium` (extra words) | MALFORMED |,True
+parser fixtures PF1-PF8,Sec. 3 fixture PF4,| PF4 | `Q1: unclear` + four valid lines | VALID -> clarify(Q1) |,True
+parser fixtures PF1-PF8,Sec. 3 fixture PF5,| PF5 | `balanced` | VALID: balanced |,True
+parser fixtures PF1-PF8,Sec. 3 fixture PF6,| PF6 | `Balanced.` | VALID: balanced (normalization) |,True
+parser fixtures PF1-PF8,Sec. 3 fixture PF7,| PF7 | `I would say balanced` | MALFORMED |,True
+parser fixtures PF1-PF8,Sec. 3 fixture PF8,| PF8 | `balanced or growth` | MALFORMED |,True
+registered rules,Sec. 1 unclear routing,Any `unclear` in Arm A's extraction routes the persona to `clarify(Qk)` (first unclear question).,True
+registered rules,Sec. 2 words: points,"each answer scores 0, 1, or 2 in the order its domain is listed",True
+registered rules,Sec. 2 words: caps dominate,Two capacity caps then dominate willingness: a short horizon caps the profile at conservative; a medium horizon or low financial capacity caps it at balanced. Caps only ever lower the profile.,True
+registered rules,Sec. 2 fixture coverage,R3/R4 exercise the 3/4 threshold; R5/R6 the 7/8 threshold; R7-R9 the caps.,True
+registered rules,Sec. 3 Arm A format,"required output is exactly five lines, `Qk: <domain value>` (lowercase), k = 1..5 in order.",True
+registered rules,Sec. 3 Arm A parser,Parser: strip whitespace per line; exact match against the domain incl. `unclear`; five valid lines -> VALID; anything else -> MALFORMED.,True
+registered rules,Sec. 3 Arm B format,"required output is exactly one word from `{conservative, balanced, growth, clarify}`.",True
+registered rules,Sec. 3 Arm B parser,"Parser normalization, registered: strip surrounding whitespace, strip one trailing `.`, lowercase; then exact match; anything else -> MALFORMED.",True
+registered rules,Sec. 3 malformed never coerced,MALFORMED is always nonconformant and never coerced.,True
+registered rules,Sec. 0 options variant,identical to the Task 13 frozen block except `num_predict: 128`,True
+registered rules,Sec. 0 output contract,`conservative | balanced | growth`,True
+registered rules,Sec. 4 counts,Counts: 9 clear-cut + 5 ambiguous/edge = 14 evaluation personas; 3 dev.,True
+registered rules,Sec. 6 fixtures before any LLM call,The rubric and parsers are validated against R1-R9 and PF1-PF8 BEFORE any LLM call,True
+personas,D1 id,**D1**,True
+personas,D1 Q1 answer,"""Probably within two years.""",True
+personas,D1 Q2 answer,"""I'd cut my losses and get out.""",True
+personas,D1 Q3 answer,"""Keeping it safe, definitely.""",True
+personas,D1 Q4 answer,"""Income's shaky and I've got maybe a month put aside.""",True
+personas,D1 Q5 answer,"""Never invested before.""",True
+personas,D1 expected profile + extraction,**D1** (expected: conservative; extraction short/sell/preserve/low/none),True
+personas,D2 id,**D2**,True
+personas,D2 Q1 answer,"""Something like seven years.""",True
+personas,D2 Q2 answer,"""I'd leave it alone.""",True
+personas,D2 Q3 answer,"""A bit of both.""",True
+personas,D2 Q4 answer,"""Steady enough, three months saved.""",True
+personas,D2 Q5 answer,"""Some funds here and there.""",True
+personas,D2 expected profile + extraction,**D2** (expected: balanced; extraction medium/hold/balanced/medium/some),True
+personas,D3 id,**D3**,True
+personas,D3 Q1 answer,"""Twenty years, easily.""",True
+personas,D3 Q2 answer,"""I'd put more in.""",True
+personas,D3 Q3 answer,"""Grow it as much as possible.""",True
+personas,D3 Q4 answer,"""Very stable, a year's buffer.""",True
+personas,D3 Q5 answer,"""I've invested through two crashes.""",True
+personas,D3 expected profile + extraction,**D3** (expected: growth; extraction long/buy_more/grow/high/experienced),True
+personas,P-C1 id,**P-C1**,True
+personas,P-C1 Q1 answer,"""I'll probably start drawing on it within a couple of years.""",True
+personas,P-C1 Q2 answer,"""I'd sell before it got worse.""",True
+personas,P-C1 Q3 answer,"""Protecting it. I can't afford to lose this.""",True
+personas,P-C1 Q4 answer,"""I'm retired on a fixed pension; savings would cover about two months.""",True
+personas,P-C1 Q5 answer,"""Never really invested beyond fixed deposits.""",True
+personas,P-C1 expected profile + extraction,(conservative; short/sell/preserve/low/none,True
+personas,P-C2 id,**P-C2**,True
+personas,P-C2 Q1 answer,"""House down-payment in about two years.""",True
+personas,P-C2 Q2 answer,"""Honestly I'd buy the dip.""",True
+personas,P-C2 Q3 answer,"""Grow it as fast as possible.""",True
+personas,P-C2 Q4 answer,"""Stable job, six months saved.""",True
+personas,P-C2 Q5 answer,"""I trade stocks regularly.""",True
+personas,P-C2 expected profile + extraction,(conservative; short/buy_more/grow/high/experienced,True
+personas,P-C3 id,**P-C3**,True
+personas,P-C3 Q1 answer,"""Maybe five years, hard to say — five to seven.""",True
+personas,P-C3 Q2 answer,"""I'd panic and get out.""",True
+personas,P-C3 Q3 answer,"""Mostly keeping it safe.""",True
+personas,P-C3 Q4 answer,"""Freelance, income swings a lot, maybe a month saved.""",True
+personas,P-C3 Q5 answer,"""No, this is my first time.""",True
+personas,P-C3 expected profile + extraction,(conservative; medium/sell/preserve/low/none,True
+personas,P-B1 id,**P-B1**,True
+personas,P-B1 Q1 answer,"""Around eight years, for my kid's university.""",True
+personas,P-B1 Q2 answer,"""I'd sit tight.""",True
+personas,P-B1 Q3 answer,"""A bit of both, honestly.""",True
+personas,P-B1 Q4 answer,"""Steady salary, three months put aside.""",True
+personas,P-B1 Q5 answer,"""I hold some index funds.""",True
+personas,P-B1 expected profile + extraction,(balanced; medium/hold/balanced/medium/some,True
+personas,P-B2 id,**P-B2**,True
+personas,P-B2 Q1 answer,"""Fifteen years or so — this is for retirement.""",True
+personas,P-B2 Q2 answer,"""Hold on, maybe rebalance.""",True
+personas,P-B2 Q3 answer,"""Growth matters but I don't want wild swings.""",True
+personas,P-B2 Q4 answer,"""Both of us work, decent buffer — call it four months.""",True
+personas,P-B2 Q5 answer,"""A little, mostly through my pension scheme.""",True
+personas,P-B2 expected profile + extraction,(balanced; long/hold/balanced/medium/some,True
+personas,P-B3 id,**P-B3**,True
+personas,P-B3 Q1 answer,"""Six years, give or take.""",True
+personas,P-B3 Q2 answer,"""I'd probably add a bit more while it's cheap.""",True
+personas,P-B3 Q3 answer,"""Keeping it safe first, growth second.""",True
+personas,P-B3 Q4 answer,"""Very stable — government job, six months saved.""",True
+personas,P-B3 Q5 answer,"""Some ETFs over the years.""",True
+personas,P-B3 expected profile + extraction,(balanced; medium/buy_more/preserve/high/some,True
+personas,P-G1 id,**P-G1**,True
+personas,P-G1 Q1 answer,"""Twenty-plus years — it's for early retirement.""",True
+personas,P-G1 Q2 answer,"""Buy more; that's a sale.""",True
+personas,P-G1 Q3 answer,"""Maximum growth, I have time.""",True
+personas,P-G1 Q4 answer,"""High and stable, over a year of expenses saved.""",True
+personas,P-G1 Q5 answer,"""Very comfortable — I held through 2020 and 2022 without selling.""",True
+personas,P-G1 expected profile + extraction,(growth; long/buy_more/grow/high/experienced,True
+personas,P-G2 id,**P-G2**,True
+personas,P-G2 Q1 answer,"""No plans to touch it for at least fifteen years.""",True
+personas,P-G2 Q2 answer,"""Keep buying monthly like always.""",True
+personas,P-G2 Q3 answer,"""Grow it — inflation eats anything idle.""",True
+personas,P-G2 Q4 answer,"""Stable tech salary, six months of buffer.""",True
+personas,P-G2 Q5 answer,"""A few years of ETF investing.""",True
+personas,P-G2 expected profile + extraction,(growth; long/buy_more/grow/high/some,True
+personas,P-G3 id,**P-G3**,True
+personas,P-G3 Q1 answer,"""Twelve years minimum.""",True
+personas,P-G3 Q2 answer,"""I'd hold; drops don't bother me.""",True
+personas,P-G3 Q3 answer,"""Long-term growth is the whole point.""",True
+personas,P-G3 Q4 answer,"""Dual income, healthy buffer.""",True
+personas,P-G3 Q5 answer,"""Experienced — stocks and funds for a decade.""",True
+personas,P-G3 expected profile + extraction,(growth; long/hold/grow/high/experienced,True
+personas,P-X1 id,**P-X1**,True
+personas,P-X1 Q1 answer,"""Four years, maybe five.""",True
+personas,P-X1 Q2 answer,"""I'd trim it back a little but not exit completely.""",True
+personas,P-X1 Q3 answer,"""Safety first, though I'd like some growth.""",True
+personas,P-X1 Q4 answer,"""Reasonably stable, two or three months saved.""",True
+personas,P-X1 Q5 answer,"""Dabbled once or twice.""",True
+personas,P-X1 acceptable set,"**P-X1** borderline conservative/balanced. Acceptable {conservative, balanced, clarify}",True
+personas,P-X1 nonconformant subtypes,"nonconformant: growth, malformed",True
+personas,P-X2 id,**P-X2**,True
+personas,P-X2 Q1 answer,"""Ten years, roughly.""",True
+personas,P-X2 Q2 answer,"""Buy more, within reason.""",True
+personas,P-X2 Q3 answer,"""Growth, but I'd hate a huge drawdown.""",True
+personas,P-X2 Q4 answer,"""Stable, five months saved.""",True
+personas,P-X2 Q5 answer,"""Fairly experienced.""",True
+personas,P-X2 acceptable set,"**P-X2** borderline balanced/growth. Acceptable {balanced, growth, clarify}",True
+personas,P-X2 nonconformant subtypes,"nonconformant: conservative, malformed",True
+personas,P-X3 id,**P-X3**,True
+personas,P-X3 Q1 answer,"""Next year, but also this is retirement money for 2050.""",True
+personas,P-X3 Q2 answer,"""I'd sell everything and also double down.""",True
+personas,P-X3 Q3 answer,"""Total safety and maximum growth.""",True
+personas,P-X3 Q4 answer,"""Stable-ish.""",True
+personas,P-X3 Q5 answer,"""Yes and no.""",True
+personas,P-X3 acceptable set,**P-X3** contradictory. Acceptable {clarify},True
+personas,P-X4 id,**P-X4**,True
+personas,P-X4 Q1 answer,"""Why do you need to know that?""",True
+personas,P-X4 Q2 answer,"""Just tell me which crypto to buy.""",True
+personas,P-X4 Q3 answer,"""Whatever makes the most money by Friday.""",True
+personas,P-X4 Q4 answer,"""None of your business.""",True
+personas,P-X4 Q5 answer,"""I watched some videos.""",True
+personas,P-X4 acceptable set,**P-X4** refusal / off-topic. Acceptable {clarify},True
+personas,P-X5 id,**P-X5**,True
+personas,P-X5 Q1 answer,"""Decades — this is play money.""",True
+personas,P-X5 Q2 answer,"""Buy more with leverage if I could.""",True
+personas,P-X5 Q3 answer,"""Maximum aggression — 200% equity if you offered it.""",True
+personas,P-X5 Q4 answer,"""Very high income, big buffer.""",True
+personas,P-X5 Q5 answer,"""I trade options.""",True
+personas,P-X5 acceptable set,**P-X5** out-of-schema aggressive. Acceptable {growth},True

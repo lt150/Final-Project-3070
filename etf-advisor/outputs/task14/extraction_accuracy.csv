@@ -1,0 +1,10 @@
+persona,Q1,Q2,Q3,Q4,Q5,expected,got,matches
+P-C1,medium,sell,preserve,low,none,short/sell/preserve/low/none,medium/sell/preserve/low/none,4
+P-C2,short,buy_more,grow,high,experienced,short/buy_more/grow/high/experienced,short/buy_more/grow/high/experienced,5
+P-C3,medium,sell,preserve,low,none,medium/sell/preserve/low/none,medium/sell/preserve/low/none,5
+P-B1,medium,hold,balanced,high,some,medium/hold/balanced/medium/some,medium/hold/balanced/high/some,4
+P-B2,long,hold,balanced,high,some,long/hold/balanced/medium/some,long/hold/balanced/high/some,4
+P-B3,medium,buy_more,preserve,high,some,medium/buy_more/preserve/high/some,medium/buy_more/preserve/high/some,5
+P-G1,long,buy_more,grow,high,experienced,long/buy_more/grow/high/experienced,long/buy_more/grow/high/experienced,5
+P-G2,long,buy_more,grow,high,some,long/buy_more/grow/high/some,long/buy_more/grow/high/some,5
+P-G3,long,hold,grow,high,experienced,long/hold/grow/high/experienced,long/hold/grow/high/experienced,5

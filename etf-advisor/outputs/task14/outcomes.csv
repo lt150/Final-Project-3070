@@ -1,0 +1,29 @@
+persona,kind,arm,parse_result,extraction,rubric_trace,outcome,expected_or_acceptable,category,credit,subtype,rep1_sha256
+P-C1,clear_cut,A,VALID,medium/sell/preserve/low/none,1+0+0+0+0=1; score_profile=conservative; cap=balanced; min -> conservative,conservative,conservative,correct profile,1.0,-,6d158381e23f11fdd8c4b73cce8da5ec4953763907bf7a0fe416228c1fae7b50
+P-C1,clear_cut,B,VALID,-,-,conservative,conservative,correct profile,1.0,-,c152d5bbb379c3f94e74801c6aa921fae55c8291acceb9d7c79cd7950bda0b12
+P-C2,clear_cut,A,VALID,short/buy_more/grow/high/experienced,0+2+2+2+2=8; score_profile=growth; cap=conservative; min -> conservative,conservative,conservative,correct profile,1.0,-,0f669bb4c88729c4b6ea874281207fd494e76e21c17addfde18359cc3a7cf3b2
+P-C2,clear_cut,B,VALID,-,-,clarify,conservative,unnecessary clarification,0.5,-,c010d5892545f57eb436da32bec37ae1447993752c6decd63021c1b253fbeb28
+P-C3,clear_cut,A,VALID,medium/sell/preserve/low/none,1+0+0+0+0=1; score_profile=conservative; cap=balanced; min -> conservative,conservative,conservative,correct profile,1.0,-,6d158381e23f11fdd8c4b73cce8da5ec4953763907bf7a0fe416228c1fae7b50
+P-C3,clear_cut,B,VALID,-,-,conservative,conservative,correct profile,1.0,-,c152d5bbb379c3f94e74801c6aa921fae55c8291acceb9d7c79cd7950bda0b12
+P-B1,clear_cut,A,VALID,medium/hold/balanced/high/some,1+1+1+2+1=6; score_profile=balanced; cap=balanced; min -> balanced,balanced,balanced,correct profile,1.0,-,e3395b02ee2481aa4393342dc20ab23e2a3da419c1c326a66a85f3ade6853f7f
+P-B1,clear_cut,B,VALID,-,-,balanced,balanced,correct profile,1.0,-,c0905088ba5b80677849d4824f21b8b075ab49c6a7f58b5b84815ccd69f3b0a5
+P-B2,clear_cut,A,VALID,long/hold/balanced/high/some,2+1+1+2+1=7; score_profile=balanced; cap=growth; min -> balanced,balanced,balanced,correct profile,1.0,-,7d03e8134ec6fc12417a956b0901b5474306642f66352ab9853bd761f283403d
+P-B2,clear_cut,B,VALID,-,-,balanced,balanced,correct profile,1.0,-,c0905088ba5b80677849d4824f21b8b075ab49c6a7f58b5b84815ccd69f3b0a5
+P-B3,clear_cut,A,VALID,medium/buy_more/preserve/high/some,1+2+0+2+1=6; score_profile=balanced; cap=balanced; min -> balanced,balanced,balanced,correct profile,1.0,-,3d2e6b2b112d383861d8ad9332587e5789be4f1291be4485ceb64371de2877a8
+P-B3,clear_cut,B,VALID,-,-,balanced,balanced,correct profile,1.0,-,c0905088ba5b80677849d4824f21b8b075ab49c6a7f58b5b84815ccd69f3b0a5
+P-G1,clear_cut,A,VALID,long/buy_more/grow/high/experienced,2+2+2+2+2=10; score_profile=growth; cap=growth; min -> growth,growth,growth,correct profile,1.0,-,c8a81210b7129c64176e329c48225c83367956a9a5d215424c883cf1c735e4df
+P-G1,clear_cut,B,VALID,-,-,growth,growth,correct profile,1.0,-,19c64195eb8f22c39b4bad63078823ddd82e6d61847b25f1f5b969be6c891661
+P-G2,clear_cut,A,VALID,long/buy_more/grow/high/some,2+2+2+2+1=9; score_profile=growth; cap=growth; min -> growth,growth,growth,correct profile,1.0,-,202eb62602f5bd434644354ec902c0b4d5ae1b0340cb3437dd5e4c9927ca026b
+P-G2,clear_cut,B,VALID,-,-,growth,growth,correct profile,1.0,-,19c64195eb8f22c39b4bad63078823ddd82e6d61847b25f1f5b969be6c891661
+P-G3,clear_cut,A,VALID,long/hold/grow/high/experienced,2+1+2+2+2=9; score_profile=growth; cap=growth; min -> growth,growth,growth,correct profile,1.0,-,4f749c57f9e799020b483fd75e5e1fac26fea731d1839b244b609c99793e1946
+P-G3,clear_cut,B,VALID,-,-,growth,growth,correct profile,1.0,-,19c64195eb8f22c39b4bad63078823ddd82e6d61847b25f1f5b969be6c891661
+P-X1,ambiguous,A,VALID,medium/hold/balanced/medium/unclear,unclear at Q5 -> clarify,clarify,"{conservative, balanced, clarify}",conformant,1.0,-,0dd6dffda215ff57b1ff5e9b213508c9c2d879c6ff36d4022ec9744cc80bf887
+P-X1,ambiguous,B,VALID,-,-,balanced,"{conservative, balanced, clarify}",conformant,1.0,-,c0905088ba5b80677849d4824f21b8b075ab49c6a7f58b5b84815ccd69f3b0a5
+P-X2,ambiguous,A,VALID,medium/buy_more/balanced/high/experienced,1+2+1+2+2=8; score_profile=growth; cap=balanced; min -> balanced,balanced,"{balanced, growth, clarify}",conformant,1.0,-,44cbb973c680d2d0632843362f6a0309082c14307876181abf2921dbba297cd0
+P-X2,ambiguous,B,VALID,-,-,growth,"{balanced, growth, clarify}",conformant,1.0,-,19c64195eb8f22c39b4bad63078823ddd82e6d61847b25f1f5b969be6c891661
+P-X3,ambiguous,A,VALID,unclear/unclear/unclear/unclear/unclear,unclear at Q1 -> clarify,clarify,{clarify},conformant,1.0,-,7c839093316790dc795ff8a591c35c5838802c9f4205a0ec17e11e68aff26b60
+P-X3,ambiguous,B,VALID,-,-,clarify,{clarify},conformant,1.0,-,c010d5892545f57eb436da32bec37ae1447993752c6decd63021c1b253fbeb28
+P-X4,ambiguous,A,VALID,unclear/unclear/unclear/unclear/unclear,unclear at Q1 -> clarify,clarify,{clarify},conformant,1.0,-,7c839093316790dc795ff8a591c35c5838802c9f4205a0ec17e11e68aff26b60
+P-X4,ambiguous,B,VALID,-,-,clarify,{clarify},conformant,1.0,-,c010d5892545f57eb436da32bec37ae1447993752c6decd63021c1b253fbeb28
+P-X5,ambiguous,A,VALID,long/buy_more/grow/high/experienced,2+2+2+2+2=10; score_profile=growth; cap=growth; min -> growth,growth,{growth},conformant,1.0,-,c8a81210b7129c64176e329c48225c83367956a9a5d215424c883cf1c735e4df
+P-X5,ambiguous,B,VALID,-,-,clarify,{growth},nonconformant,0.0,clarify,c010d5892545f57eb436da32bec37ae1447993752c6decd63021c1b253fbeb28

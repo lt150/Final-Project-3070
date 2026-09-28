@@ -1,0 +1,72 @@
+Task 8 Stage C — one-shot test evaluation (T1xA1, frozen)
+
+GATE C1 PASS — checkpoint round-trip: reloaded T1xA1 val RMSE 0.0031219536 matches stage_b_results.csv 0.0031219536 (|diff| 8.2e-18 < 1e-09)
+GATE C2 PASS — baseline.parquet holds all 3856 test rows in npz row order (Stage A wrote them; no vol_trail_20 extension needed); 50-row (window_end, ticker) spot check vs meta (seed 42) matches
+GATE C3 PASS — OLS fit on train rows only, all coefficients finite; pooled: a=0.00293256, b=0.659492 (2 params); per-ticker: 8 x (a, b) = 16 params
+
+— val context table (pre-test; OLS baselines are interpretive only, no selection role) —
+forecaster     rmse      mae  pearson_r  std_ratio    skill
+   persist 0.003544 0.002583   0.781148   0.998355 0.000000
+      lstm 0.003122 0.002292   0.816891   0.819478 0.118964
+ols_pooled 0.003455 0.002638   0.781148   0.658407 0.025110
+ols_ticker 0.003350 0.002482   0.794499   0.772097 0.054630
+
+====================================================================
+TEST — single pass, first and only contact with test.npz
+====================================================================
+
+1. headline (raw daily vol units; skill vs persistence):
+forecaster     rmse      mae  pearson_r  std_ratio     skill
+   persist 0.002561 0.001917   0.671985   1.015123  0.000000
+      lstm 0.002570 0.002008   0.659262   0.941831 -0.003266
+ols_pooled 0.002335 0.001817   0.671985   0.669465  0.088553
+ols_ticker 0.002288 0.001801   0.743707   1.026408  0.106570
+
+2. per-ticker RMSE and skill:
+     ticker    n  rmse_persist  rmse_lstm  skill_lstm  rmse_ols_pooled  skill_ols_pooled  rmse_ols_ticker  skill_ols_ticker
+        AGG  482      0.001016   0.001510   -0.486870         0.001842         -0.813444         0.001646         -0.620886
+        EEM  482      0.002771   0.002743    0.010063         0.002352          0.151298         0.002778         -0.002720
+        EFA  482      0.002427   0.002564   -0.056253         0.002056          0.152945         0.002255          0.071164
+        GLD  482      0.002722   0.002822   -0.036508         0.002362          0.132313         0.002265          0.168128
+        IEF  482      0.001519   0.001990   -0.310287         0.001849         -0.217925         0.001415          0.067925
+        QQQ  482      0.003207   0.002672    0.166816         0.002819          0.120976         0.002598          0.189884
+        SPY  482      0.002604   0.002664   -0.022912         0.002243          0.138532         0.002209          0.151916
+        VNQ  482      0.003332   0.003209    0.037032         0.002911          0.126404         0.002761          0.171334
+MEAN(eq-wt) 3856      0.002450   0.002522   -0.087365         0.002304         -0.026113         0.002241          0.024593
+
+3. decile calibration (each forecaster bucketed by its own predicted decile):
+ decile  persist_pred  persist_actual  lstm_pred  lstm_actual  ols_pooled_pred  ols_pooled_actual  ols_ticker_pred  ols_ticker_actual
+      1      0.003448        0.004138   0.003661     0.004313         0.005206           0.004138         0.002510           0.003847
+      2      0.004684        0.005086   0.004780     0.004968         0.006022           0.005086         0.003657           0.004728
+      3      0.005791        0.006340   0.006423     0.006924         0.006752           0.006340         0.006076           0.006398
+      4      0.006772        0.007855   0.007722     0.008076         0.007398           0.007855         0.008172           0.007910
+      5      0.007678        0.008653   0.008609     0.008443         0.007996           0.008653         0.008823           0.008344
+      6      0.008583        0.008752   0.009362     0.008612         0.008593           0.008752         0.009454           0.009326
+      7      0.009348        0.009320   0.010075     0.008980         0.009097           0.009320         0.010058           0.009502
+      8      0.010326        0.009967   0.010720     0.009645         0.009743           0.009967         0.010717           0.009969
+      9      0.011439        0.009750   0.011515     0.009913         0.010476           0.009750         0.011348           0.009819
+     10      0.014328        0.011340   0.013465     0.011327         0.012382           0.011340         0.012838           0.011359
+
+4. conditional skill by within-ticker decile of vol_trail_20 (test is 2023-24, calmer than val's 2021-22):
+ trail_decile   n  rmse_persist  rmse_lstm  skill_lstm  rmse_ols_pooled  skill_ols_pooled  rmse_ols_ticker  skill_ols_ticker
+            1 392      0.003374   0.002730    0.190936         0.002878          0.146928         0.002321          0.312124
+            2 384      0.002521   0.002510    0.004227         0.002356          0.065340         0.002242          0.110743
+            3 384      0.002053   0.001975    0.038060         0.001951          0.049698         0.002074         -0.010449
+            4 384      0.001931   0.002247   -0.163404         0.002046         -0.059447         0.002014         -0.042927
+            5 384      0.001916   0.002488   -0.298579         0.002165         -0.129590         0.001997         -0.042046
+            6 384      0.002114   0.002517   -0.190698         0.002282         -0.079613         0.002157         -0.020482
+            7 384      0.002044   0.002426   -0.186846         0.002113         -0.033674         0.002206         -0.079079
+            8 384      0.002654   0.003004   -0.131509         0.002530          0.046925         0.002634          0.007709
+            9 384      0.002680   0.002822   -0.052909         0.002447          0.087043         0.002632          0.018033
+           10 392      0.003625   0.002810    0.224795         0.002422          0.332011         0.002491          0.312752
+
+— finding statement —
+(a) LSTM vs persistence on test: skill -0.0033 (RMSE 0.002570 vs 0.002561) — the LSTM DOES NOT beat persistence on test. Val skill was +0.1190.
+(b) LSTM vs OLS-pooled: OLS-pooled skill +0.0886 (RMSE 0.002335); LSTM RMSE is 10.07% HIGHER than OLS-pooled.
+(b) LSTM vs OLS-per-ticker: OLS-per-ticker skill +0.1066 (RMSE 0.002288); LSTM RMSE is 12.29% HIGHER than OLS-per-ticker.
+(c) Where the skill sits: positive LSTM skill on 3/8 tickers (EEM, QQQ, VNQ); equal-weighted mean skill -0.0874 vs pooled -0.0033. Conditional on trailing vol: top within-ticker decile skill +0.2248, deciles 1-2 mean +0.0976, deciles 4-9 mean -0.1707.
+(d) Anomalies: none. LSTM prediction range [0.002718, 0.020447]; floor hits 0; std ratio 0.9418 (under-dispersion is the known, pre-registered shrinkage behaviour, not an anomaly). Reported as-is; test not touched again.
+
+deliverables: stage_c_results.csv, predictions_test.parquet (3856 rows), stage_c_report.txt — all in outputs/task8/
+
+STOP — Task 8 evaluation closed. Test was touched exactly once; these numbers are final regardless of outcome. Any further modeling is a new, separately registered task.

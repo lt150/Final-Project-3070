@@ -1,0 +1,6 @@
+seq,purpose,prompt_chars,response_chars,i1_model_ok,i1_model_reported,i2_no_thinking_ok,i2_thinking_evidence,i3_done,i3_done_reason,i4_prompt_eval_count,i4_budget,i4_ok,wall_seconds,total_duration_ns,load_duration_ns,prompt_eval_duration_ns,eval_count,eval_duration_ns,eval_tokens_per_second
+1,stage_b:b3_warmup_discarded,72,495,True,qwen3.5:9b,True,none,True,stop,24,7680,True,12.621,10574789100,355777400,500202000,81,9678443000,8.3691
+2,stage_b:b3_probe_rep1,72,495,True,qwen3.5:9b,True,none,True,stop,24,7680,True,12.204,10152734300,349804400,145906000,81,9634588000,8.4072
+3,stage_b:b3_probe_rep2,72,495,True,qwen3.5:9b,True,none,True,stop,24,7680,True,12.165,10115073900,340583300,146894000,81,9615283000,8.4241
+4,stage_b:b3_probe_rep3,72,495,True,qwen3.5:9b,True,none,True,stop,24,7680,True,12.263,10220362100,350298700,146244000,81,9718427000,8.3347
+5,stage_b:anchor_dry_run,2920,660,True,qwen3.5:9b,True,none,True,stop,770,7680,True,27.073,25009184500,341740700,155306000,200,24487449000,8.1674

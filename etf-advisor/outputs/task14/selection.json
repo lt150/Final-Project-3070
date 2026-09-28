@@ -1,0 +1,14 @@
+{
+  "basis": "strict win on the primary criterion",
+  "persona_sha256": "e18db29bdfd0be91566bad1270355ba61ccce9098eda7b6f481b63425022224d",
+  "primary": {
+    "A": 9.0,
+    "B": 8.5
+  },
+  "prompt_sha256": "a5760514e9d33e63e06984a3a8de5e6a956dc3d2176082e51ed6ffb3c792523b",
+  "secondary": {
+    "A": 5,
+    "B": 4
+  },
+  "selected_arm": "A"
+}
